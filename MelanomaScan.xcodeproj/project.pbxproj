@@ -16,6 +16,15 @@
 		7B9D4C432705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D4C422705FE3E002A6A0F /* melanomaModel1(91).mlmodel */; };
 		7B9D4C442705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D4C422705FE3E002A6A0F /* melanomaModel1(91).mlmodel */; };
 		7B9D4C452705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D4C422705FE3E002A6A0F /* melanomaModel1(91).mlmodel */; };
+		7B9D4C4F2705FFC1002A6A0F /* melanomaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D4C4E2705FFC1002A6A0F /* melanomaModel.swift */; };
+		7B9D4C502705FFC1002A6A0F /* melanomaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D4C4E2705FFC1002A6A0F /* melanomaModel.swift */; };
+		7B9D4C512705FFC1002A6A0F /* melanomaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D4C4E2705FFC1002A6A0F /* melanomaModel.swift */; };
+		7B9D4C5A27060448002A6A0F /* ISIC_0799535.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B9D4C5927060448002A6A0F /* ISIC_0799535.jpg */; };
+		7B9D4C5B27060448002A6A0F /* ISIC_0799535.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B9D4C5927060448002A6A0F /* ISIC_0799535.jpg */; };
+		7B9D4C5C27060448002A6A0F /* ISIC_0799535.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B9D4C5927060448002A6A0F /* ISIC_0799535.jpg */; };
+		7B9D4C6F27060EC9002A6A0F /* ISIC_1135213.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B9D4C6E27060EC8002A6A0F /* ISIC_1135213.jpg */; };
+		7B9D4C7027060EC9002A6A0F /* ISIC_1135213.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B9D4C6E27060EC8002A6A0F /* ISIC_1135213.jpg */; };
+		7B9D4C7127060EC9002A6A0F /* ISIC_1135213.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B9D4C6E27060EC8002A6A0F /* ISIC_1135213.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +59,9 @@
 		7B1C2B7226F6012F00593D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B55D4182705BE1F003F7475 /* melanomaClassifier600.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = melanomaClassifier600.mlproj; sourceTree = "<group>"; };
 		7B9D4C422705FE3E002A6A0F /* melanomaModel1(91).mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "melanomaModel1(91).mlmodel"; sourceTree = "<group>"; };
+		7B9D4C4E2705FFC1002A6A0F /* melanomaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = melanomaModel.swift; sourceTree = "<group>"; };
+		7B9D4C5927060448002A6A0F /* ISIC_0799535.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ISIC_0799535.jpg; sourceTree = "<group>"; };
+		7B9D4C6E27060EC8002A6A0F /* ISIC_1135213.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ISIC_1135213.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +114,9 @@
 		7B1C2B5226F6012C00593D7A /* MelanomaScan */ = {
 			isa = PBXGroup;
 			children = (
-				7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */,
-				7B1C2B5526F6012C00593D7A /* ContentView.swift */,
+				7B9D4C6E27060EC8002A6A0F /* ISIC_1135213.jpg */,
+				7B9D4C4D2705FFA3002A6A0F /* Backend */,
+				7B9D4C4C2705FF97002A6A0F /* Views */,
 				7B1C2B5726F6012F00593D7A /* Assets.xcassets */,
 				7B1C2B5C26F6012F00593D7A /* Info.plist */,
 				7B1C2B5926F6012F00593D7A /* Preview Content */,
@@ -143,6 +156,24 @@
 				7B9D4C422705FE3E002A6A0F /* melanomaModel1(91).mlmodel */,
 			);
 			path = MelanomaMLModel;
+			sourceTree = "<group>";
+		};
+		7B9D4C4C2705FF97002A6A0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B1C2B5526F6012C00593D7A /* ContentView.swift */,
+				7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7B9D4C4D2705FFA3002A6A0F /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				7B9D4C4E2705FFC1002A6A0F /* melanomaModel.swift */,
+				7B9D4C5927060448002A6A0F /* ISIC_0799535.jpg */,
+			);
+			path = Backend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B1C2B5B26F6012F00593D7A /* Preview Assets.xcassets in Resources */,
+				7B9D4C5A27060448002A6A0F /* ISIC_0799535.jpg in Resources */,
+				7B9D4C6F27060EC9002A6A0F /* ISIC_1135213.jpg in Resources */,
 				7B1C2B5826F6012F00593D7A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +290,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B9D4C7027060EC9002A6A0F /* ISIC_1135213.jpg in Resources */,
+				7B9D4C5B27060448002A6A0F /* ISIC_0799535.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +299,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B9D4C7127060EC9002A6A0F /* ISIC_1135213.jpg in Resources */,
+				7B9D4C5C27060448002A6A0F /* ISIC_0799535.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B1C2B5626F6012C00593D7A /* ContentView.swift in Sources */,
+				7B9D4C4F2705FFC1002A6A0F /* melanomaModel.swift in Sources */,
 				7B1C2B5426F6012C00593D7A /* MelanomaScanApp.swift in Sources */,
 				7B9D4C432705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
 			);
@@ -286,6 +324,7 @@
 			files = (
 				7B1C2B6626F6012F00593D7A /* MelanomaScanTests.swift in Sources */,
 				7B9D4C442705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
+				7B9D4C502705FFC1002A6A0F /* melanomaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +334,7 @@
 			files = (
 				7B1C2B7126F6012F00593D7A /* MelanomaScanUITests.swift in Sources */,
 				7B9D4C452705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
+				7B9D4C512705FFC1002A6A0F /* melanomaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
