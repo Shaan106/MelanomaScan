@@ -45,6 +45,7 @@
 		7B1C2B6C26F6012F00593D7A /* MelanomaScanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MelanomaScanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1C2B7026F6012F00593D7A /* MelanomaScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelanomaScanUITests.swift; sourceTree = "<group>"; };
 		7B1C2B7226F6012F00593D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B55D4182705BE1F003F7475 /* melanomaClassifier600.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = melanomaClassifier600.mlproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +76,11 @@
 		7B1C2B4726F6012C00593D7A = {
 			isa = PBXGroup;
 			children = (
+				7B55D4182705BE1F003F7475 /* melanomaClassifier600.mlproj */,
 				7B1C2B5226F6012C00593D7A /* MelanomaScan */,
 				7B1C2B6426F6012F00593D7A /* MelanomaScanTests */,
 				7B1C2B6F26F6012F00593D7A /* MelanomaScanUITests */,
+				7B1C2B7226F6012F00593D7A /* Info.plist */,
 				7B1C2B5126F6012C00593D7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				7B1C2B7026F6012F00593D7A /* MelanomaScanUITests.swift */,
-				7B1C2B7226F6012F00593D7A /* Info.plist */,
 			);
 			path = MelanomaScanUITests;
 			sourceTree = "<group>";
@@ -417,8 +419,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MelanomaScan/Preview Content\"";
+				DEVELOPMENT_TEAM = 8YG5K353Y8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MelanomaScan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -428,6 +432,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yadav.MelanomaScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -438,8 +443,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MelanomaScan/Preview Content\"";
+				DEVELOPMENT_TEAM = 8YG5K353Y8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MelanomaScan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -449,6 +456,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yadav.MelanomaScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
