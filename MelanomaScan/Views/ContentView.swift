@@ -12,27 +12,19 @@ struct ContentView: View {
     @State private var testImage = Image("testImageBenign")
     @State private var testImageOutput = ""
     
+    let model = melanomaModel1_91_()
+    
     var body: some View {
         VStack {
-            testImage
-                .resizable()
-                .scaledToFit()
-            Button(action: calculateMelanoma) {
-                Text("Calculate")
+            Button("Classify") {
+                
             }
+//            testImage
+//                .resizable()
+//                .scaledToFit()
         }
     }
     
-    func calculateMelanoma() {
-        let model = melanomaModel1_91_()
-        
-        do {
-            //let prediction = try model.prediction(image: testImage)
-            //print(prediction)
-        } catch {
-            testImageOutput = "Error"
-        }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
