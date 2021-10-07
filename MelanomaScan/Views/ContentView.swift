@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var currentImageName = "testImageBenign"
+    @State private var currentImageName = "testImageBenign2"
     @State private var classificationLabel: String = ""
+    @State private var confidence: Double = 0
     let imageClassifierInstance = imageClassifier()
         
     var body: some View {
@@ -21,10 +22,14 @@ struct ContentView: View {
                 .frame(width:200,height:200)
 
             Button("Classify") {
-                self.classificationLabel = imageClassifierInstance.performImageClassification(imageName: currentImageName)
+                (self.classificationLabel, self.confidence) = imageClassifierInstance.performImageClassification(imageName: currentImageName)
             }
             
             Text(classificationLabel)
+                .padding()
+                .font(.largeTitle)
+            
+            Text(String(confidence))
                 .padding()
                 .font(.largeTitle)
         }

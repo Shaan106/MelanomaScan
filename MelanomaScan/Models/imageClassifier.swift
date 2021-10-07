@@ -12,23 +12,25 @@ class imageClassifier {
     
     let model = melanomaModel1_91_()
     
-    func performImageClassification(imageName: String) -> String {
+    func performImageClassification(imageName: String) -> (String, Double) {
         
         guard let img = UIImage(named: imageName),
-              let resizedImage = img.resizeTo(size: CGSize(width:299, height:299)),
+              let resizedImage = img.resizeTo(size: CGSize(width:600, height:600)),
               let buffer = resizedImage.toBuffer() else {
-            return "error1"
+            return ("error1", 101.1)
         }
         
         let outputOptional = try? model.prediction(image: buffer)
         
         if let output = outputOptional {
             
-            return output.classLabel
-            
+            if let malignantProbability = output.classLabelProbs["Malignant"] {
+                return (output.classLabel, malignantProbability)
+            }
+            return (output.classLabel, 101.3)
         }
         
-        return "error2"
+        return ("error2", 101.2)
     }
     
 }
