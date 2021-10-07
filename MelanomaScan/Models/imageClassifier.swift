@@ -10,8 +10,10 @@ import SwiftUI
 
 class imageClassifier {
     
+    //creating an instance of the trained melanoma model.
     let model = melanomaModel1_91_()
     
+    //performs classification on the image specified, returning the output classification as well as the certainty of the classification.
     func performImageClassification(imageName: String) -> (String, Double) {
         
         guard let img = UIImage(named: imageName),

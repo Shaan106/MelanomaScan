@@ -21,7 +21,7 @@ extension UIImage {
     func toBuffer() -> CVPixelBuffer? { //returns the CVPixelBuffer format of an image. Converting a UIImage to a CVPixelbuffer
         let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
         var pixelBuffer : CVPixelBuffer?
-        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(self.size.width), Int(self.size.height), kCVPixelFormatType_32ARGB, attrs, &pixelBuffer)
+        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(self.size.width), Int(self.size.height), kCVPixelFormatType_32ARGB, attrs, &pixelBuffer) //alter the kCVPixelFormat type to ensure model is classifying optimally
         
         guard (status == kCVReturnSuccess) else {
             return nil
@@ -30,7 +30,6 @@ extension UIImage {
         let pixelData = CVPixelBufferGetBaseAddress(pixelBuffer!)
         
         let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
-        //finish and also check line 24 kCVPixel format type
         
         let context = CGContext(data:pixelData, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!), space: rgbColorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
         
