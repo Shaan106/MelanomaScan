@@ -14,12 +14,15 @@ struct SkinClassifier: View {
     @State private var classificationLabel: String = ""
     @State private var confidence: Double = 0
     
+    @State private var imageChosen: Double = 1
+    
     //creates instance of imageClassifier class
     let imageClassifierInstance = imageClassifier()
         
     var body: some View {
         
         VStack {
+            
             //displaying chosen image, as well as information about classification of that image
             Image(currentImageName)
                 .resizable()
@@ -38,6 +41,12 @@ struct SkinClassifier: View {
             Text(String(confidence))
                 .padding()
                 .font(.largeTitle)
+            
+            NavigationLink("To Camera (choose new img)", destination: Camera())
+                .padding()
+            
+            NavigationLink("To Information Page (change risk profile)", destination: InformationPage())
+                .padding()
         }
     }
     

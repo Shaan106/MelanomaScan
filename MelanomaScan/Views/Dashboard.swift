@@ -13,7 +13,15 @@ struct Dashboard: View {
         // a navigation view allows for links to other pages
         NavigationView {
             VStack {
+                
+                Text("Melanoma Detector")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding()
+                
                 Text("Dashboard")
+                    .font(.title)
+                    .padding()
                 
                 //links to other pages.
                 NavigationLink("To Skin Classifier", destination: SkinClassifier())

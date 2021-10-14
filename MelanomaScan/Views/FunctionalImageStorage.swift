@@ -9,7 +9,13 @@ import SwiftUI
 
 struct FunctionalImageStorage: View {
     var body: some View {
-        Text("Functional Image Storage Page")
+        VStack {
+            Text("Functional Image Storage Page")
+            
+            NavigationLink("To Camera", destination: Camera())
+                .padding()
+        }
+        
     }
 }
 

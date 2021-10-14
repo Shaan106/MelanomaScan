@@ -172,8 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				CD52E74F271832DD00CA2B2B /* Dashboard.swift */,
-				7B1C2B5526F6012C00593D7A /* SkinClassifier.swift */,
 				CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */,
+				7B1C2B5526F6012C00593D7A /* SkinClassifier.swift */,
 				CD11A8A22718359000FF1C78 /* Camera.swift */,
 				CD11A8AD271835A800FF1C78 /* InformationPage.swift */,
 				CD11A8B2271835CC00FF1C78 /* Reminders.swift */,

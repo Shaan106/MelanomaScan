@@ -9,7 +9,16 @@ import SwiftUI
 
 struct Reminders: View {
     var body: some View {
-        Text("Reminders page")
+        VStack {
+            Text("Reminders page")
+                .padding()
+            
+            Button("Set reminder") {
+                //set reminder
+            }
+            .padding()
+        }
+        
     }
 }
 
