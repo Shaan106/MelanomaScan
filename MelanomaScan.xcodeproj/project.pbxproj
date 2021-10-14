@@ -19,6 +19,11 @@
 		7B9DDAB22708762600AB4DA6 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */; };
 		7B9DDAB32708762600AB4DA6 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */; };
 		7B9DDAB42708762600AB4DA6 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */; };
+		CD11A89E2718357F00FF1C78 /* FunctionalImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */; };
+		CD11A8A32718359000FF1C78 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8A22718359000FF1C78 /* Camera.swift */; };
+		CD11A8AE271835A800FF1C78 /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8AD271835A800FF1C78 /* InformationPage.swift */; };
+		CD11A8B3271835CC00FF1C78 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8B2271835CC00FF1C78 /* Reminders.swift */; };
+		CD11A8BB2718361900FF1C78 /* WeatherRisks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */; };
 		CD52E746270EF48800CA2B2B /* imageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E745270EF48800CA2B2B /* imageClassifier.swift */; };
 		CD52E747270EF48800CA2B2B /* imageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E745270EF48800CA2B2B /* imageClassifier.swift */; };
 		CD52E748270EF48800CA2B2B /* imageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E745270EF48800CA2B2B /* imageClassifier.swift */; };
@@ -60,6 +65,11 @@
 		7B55D4182705BE1F003F7475 /* melanomaClassifier600.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = melanomaClassifier600.mlproj; sourceTree = "<group>"; };
 		7B9D4C422705FE3E002A6A0F /* melanomaModel1(91).mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "melanomaModel1(91).mlmodel"; sourceTree = "<group>"; };
 		7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalImageStorage.swift; sourceTree = "<group>"; };
+		CD11A8A22718359000FF1C78 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		CD11A8AD271835A800FF1C78 /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
+		CD11A8B2271835CC00FF1C78 /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
+		CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRisks.swift; sourceTree = "<group>"; };
 		CD52E745270EF48800CA2B2B /* imageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageClassifier.swift; sourceTree = "<group>"; };
 		CD52E74F271832DD00CA2B2B /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +173,11 @@
 			children = (
 				CD52E74F271832DD00CA2B2B /* Dashboard.swift */,
 				7B1C2B5526F6012C00593D7A /* SkinClassifier.swift */,
+				CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */,
+				CD11A8A22718359000FF1C78 /* Camera.swift */,
+				CD11A8AD271835A800FF1C78 /* InformationPage.swift */,
+				CD11A8B2271835CC00FF1C78 /* Reminders.swift */,
+				CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */,
 				7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */,
 			);
 			path = Views;
@@ -313,12 +328,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD11A8A32718359000FF1C78 /* Camera.swift in Sources */,
 				7B1C2B5626F6012C00593D7A /* SkinClassifier.swift in Sources */,
+				CD11A8AE271835A800FF1C78 /* InformationPage.swift in Sources */,
+				CD11A8BB2718361900FF1C78 /* WeatherRisks.swift in Sources */,
 				7B1C2B5426F6012C00593D7A /* MelanomaScanApp.swift in Sources */,
 				7B9D4C432705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
+				CD11A8B3271835CC00FF1C78 /* Reminders.swift in Sources */,
 				7B9DDAB22708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
 				CD52E750271832DD00CA2B2B /* Dashboard.swift in Sources */,
 				CD52E746270EF48800CA2B2B /* imageClassifier.swift in Sources */,
+				CD11A89E2718357F00FF1C78 /* FunctionalImageStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
