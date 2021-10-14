@@ -7,22 +7,26 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SkinClassifier: View {
     
     //display variables to do with the output of image classification
-    @State private var currentImageName = "testImageBenign2"
+    @State private var currentImageName = "testImageMalignant1"
     @State private var classificationLabel: String = ""
     @State private var confidence: Double = 0
+    
+    //creates instance of imageClassifier class
     let imageClassifierInstance = imageClassifier()
         
     var body: some View {
+        
         VStack {
             //displaying chosen image, as well as information about classification of that image
             Image(currentImageName)
                 .resizable()
 //                .frame(width:UIScreen.main.bounds.width*(3/4), height:UIScreen.main.bounds.height*(1/4))
                 .frame(width:200,height:200)
-
+            
+            //button to call subroutine to classify image
             Button("Classify") {
                 (self.classificationLabel, self.confidence) = imageClassifierInstance.performImageClassification(imageName: currentImageName)
             }
@@ -39,8 +43,8 @@ struct ContentView: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SkinClassifier_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SkinClassifier()
     }
 }

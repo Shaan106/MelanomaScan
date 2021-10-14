@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B1C2B5426F6012C00593D7A /* MelanomaScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */; };
-		7B1C2B5626F6012C00593D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1C2B5526F6012C00593D7A /* ContentView.swift */; };
+		7B1C2B5626F6012C00593D7A /* SkinClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1C2B5526F6012C00593D7A /* SkinClassifier.swift */; };
 		7B1C2B5826F6012F00593D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B1C2B5726F6012F00593D7A /* Assets.xcassets */; };
 		7B1C2B5B26F6012F00593D7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B1C2B5A26F6012F00593D7A /* Preview Assets.xcassets */; };
 		7B1C2B6626F6012F00593D7A /* MelanomaScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1C2B6526F6012F00593D7A /* MelanomaScanTests.swift */; };
@@ -22,6 +22,9 @@
 		CD52E746270EF48800CA2B2B /* imageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E745270EF48800CA2B2B /* imageClassifier.swift */; };
 		CD52E747270EF48800CA2B2B /* imageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E745270EF48800CA2B2B /* imageClassifier.swift */; };
 		CD52E748270EF48800CA2B2B /* imageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E745270EF48800CA2B2B /* imageClassifier.swift */; };
+		CD52E750271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
+		CD52E751271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
+		CD52E752271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +47,7 @@
 /* Begin PBXFileReference section */
 		7B1C2B5026F6012C00593D7A /* MelanomaScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelanomaScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelanomaScanApp.swift; sourceTree = "<group>"; };
-		7B1C2B5526F6012C00593D7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7B1C2B5526F6012C00593D7A /* SkinClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinClassifier.swift; sourceTree = "<group>"; };
 		7B1C2B5726F6012F00593D7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B1C2B5A26F6012F00593D7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B1C2B5C26F6012F00593D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		7B9D4C422705FE3E002A6A0F /* melanomaModel1(91).mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "melanomaModel1(91).mlmodel"; sourceTree = "<group>"; };
 		7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		CD52E745270EF48800CA2B2B /* imageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageClassifier.swift; sourceTree = "<group>"; };
+		CD52E74F271832DD00CA2B2B /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +113,9 @@
 		7B1C2B5226F6012C00593D7A /* MelanomaScan */ = {
 			isa = PBXGroup;
 			children = (
+				7B9D4C412705FD38002A6A0F /* MelanomaMLModel */,
 				CD52E744270EF46000CA2B2B /* Models */,
 				7B9DDAB02708760900AB4DA6 /* Extensions */,
-				7B9D4C412705FD38002A6A0F /* MelanomaMLModel */,
 				7B9D4C4C2705FF97002A6A0F /* Views */,
 				7B1C2B5726F6012F00593D7A /* Assets.xcassets */,
 				7B1C2B5C26F6012F00593D7A /* Info.plist */,
@@ -157,7 +161,8 @@
 		7B9D4C4C2705FF97002A6A0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7B1C2B5526F6012C00593D7A /* ContentView.swift */,
+				CD52E74F271832DD00CA2B2B /* Dashboard.swift */,
+				7B1C2B5526F6012C00593D7A /* SkinClassifier.swift */,
 				7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */,
 			);
 			path = Views;
@@ -308,10 +313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B1C2B5626F6012C00593D7A /* ContentView.swift in Sources */,
+				7B1C2B5626F6012C00593D7A /* SkinClassifier.swift in Sources */,
 				7B1C2B5426F6012C00593D7A /* MelanomaScanApp.swift in Sources */,
 				7B9D4C432705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
 				7B9DDAB22708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
+				CD52E750271832DD00CA2B2B /* Dashboard.swift in Sources */,
 				CD52E746270EF48800CA2B2B /* imageClassifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +328,7 @@
 			files = (
 				CD52E747270EF48800CA2B2B /* imageClassifier.swift in Sources */,
 				7B9DDAB32708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
+				CD52E751271832DD00CA2B2B /* Dashboard.swift in Sources */,
 				7B1C2B6626F6012F00593D7A /* MelanomaScanTests.swift in Sources */,
 				7B9D4C442705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
 			);
@@ -333,6 +340,7 @@
 			files = (
 				CD52E748270EF48800CA2B2B /* imageClassifier.swift in Sources */,
 				7B9DDAB42708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
+				CD52E752271832DD00CA2B2B /* Dashboard.swift in Sources */,
 				7B1C2B7126F6012F00593D7A /* MelanomaScanUITests.swift in Sources */,
 				7B9D4C452705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
 			);

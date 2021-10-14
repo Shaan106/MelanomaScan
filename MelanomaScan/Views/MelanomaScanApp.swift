@@ -11,7 +11,7 @@ import SwiftUI
 struct MelanomaScanApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView() //choose initial view here
+            Dashboard() //choose initial view here
         }
     }
 }
