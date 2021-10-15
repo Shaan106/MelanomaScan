@@ -30,6 +30,9 @@
 		CD52E750271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
 		CD52E751271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
 		CD52E752271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
+		CD8242642719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
+		CD8242652719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
+		CD8242662719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,7 @@
 		CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRisks.swift; sourceTree = "<group>"; };
 		CD52E745270EF48800CA2B2B /* imageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageClassifier.swift; sourceTree = "<group>"; };
 		CD52E74F271832DD00CA2B2B /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		CD8242632719C449008E44DB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				CD52E745270EF48800CA2B2B /* imageClassifier.swift */,
+				CD8242632719C449008E44DB /* ImagePicker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				CD11A8B3271835CC00FF1C78 /* Reminders.swift in Sources */,
 				7B9DDAB22708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
 				CD52E750271832DD00CA2B2B /* Dashboard.swift in Sources */,
+				CD8242642719C449008E44DB /* ImagePicker.swift in Sources */,
 				CD52E746270EF48800CA2B2B /* imageClassifier.swift in Sources */,
 				CD11A89E2718357F00FF1C78 /* FunctionalImageStorage.swift in Sources */,
 			);
@@ -349,6 +355,7 @@
 				CD52E747270EF48800CA2B2B /* imageClassifier.swift in Sources */,
 				7B9DDAB32708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
 				CD52E751271832DD00CA2B2B /* Dashboard.swift in Sources */,
+				CD8242652719C449008E44DB /* ImagePicker.swift in Sources */,
 				7B1C2B6626F6012F00593D7A /* MelanomaScanTests.swift in Sources */,
 				7B9D4C442705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
 			);
@@ -361,6 +368,7 @@
 				CD52E748270EF48800CA2B2B /* imageClassifier.swift in Sources */,
 				7B9DDAB42708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
 				CD52E752271832DD00CA2B2B /* Dashboard.swift in Sources */,
+				CD8242662719C449008E44DB /* ImagePicker.swift in Sources */,
 				7B1C2B7126F6012F00593D7A /* MelanomaScanUITests.swift in Sources */,
 				7B9D4C452705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
 			);

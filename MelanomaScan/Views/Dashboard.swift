@@ -14,15 +14,6 @@ struct Dashboard: View {
         NavigationView {
             VStack {
                 
-                Text("Melanoma Detector")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding()
-                
-                Text("Dashboard")
-                    .font(.title)
-                    .padding()
-                
                 //links to other pages.
                 NavigationLink("To Skin Classifier", destination: SkinClassifier())
                     .padding()
@@ -42,6 +33,8 @@ struct Dashboard: View {
                 NavigationLink("To Weather Risks", destination: WeatherRisks())
                     .padding()
             }
+            
+            .navigationBarTitle("Melanoma Detector")
         }
         
     }

@@ -15,6 +15,7 @@ struct FunctionalImageStorage: View {
             NavigationLink("To Camera", destination: Camera())
                 .padding()
         }
+        .navigationBarTitle("Functional Image Storage")
         
     }
 }

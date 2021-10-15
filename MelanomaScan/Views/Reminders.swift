@@ -18,6 +18,7 @@ struct Reminders: View {
             }
             .padding()
         }
+        .navigationBarTitle("Reminders")
         
     }
 }

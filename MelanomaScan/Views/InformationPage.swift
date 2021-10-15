@@ -10,6 +10,8 @@ import SwiftUI
 struct InformationPage: View {
     var body: some View {
         Text("Information page")
+        
+        .navigationBarTitle("Information Page")
     }
 }
 

@@ -17,6 +17,11 @@ struct SkinClassifier: View {
     
     @State private var imageChosen: Double = 1
     
+    //picture picker
+    @State var changeClassificationImage = false
+    @State var openCameraRoll = false
+    @State var imageSelectedFromCameraRoll = UIImage()
+    
     //creates instance of imageClassifier class
     let imageClassifierInstance = imageClassifier()
         
@@ -33,10 +38,22 @@ struct SkinClassifier: View {
             .padding()
             
             //displaying chosen image, as well as information about classification of that image
-            Image(currentImageName)
-                .resizable()
-                //.frame(width:UIScreen.main.bounds.width*(3/4), height:UIScreen.main.bounds.height*(1/4))
-                .frame(width:200,height:200)
+            Button(action: {
+                changeClassificationImage = true
+                openCameraRoll = true
+                
+            }, label: {
+                if changeClassificationImage == true {
+                    Image(uiImage: imageSelectedFromCameraRoll)
+                        .resizable()
+                        .frame(width: 250, height: 250)
+                } else {
+                    Image(currentImageName)
+                        .resizable()
+                        //.frame(width:UIScreen.main.bounds.width*(3/4), height:UIScreen.main.bounds.height*(1/4))
+                        .frame(width:250,height:250)
+                }
+            })
             
             //button to call subroutine to classify image
             Button("Classify") {
@@ -56,7 +73,13 @@ struct SkinClassifier: View {
             NavigationLink("To Camera (choose new img)", destination: Camera())
             
             NavigationLink("To Information Page (change risk profile)", destination: InformationPage())
-        }
+            
+        }.sheet(isPresented: $openCameraRoll, content: {
+            ImagePicker(selectedImage: $imageSelectedFromCameraRoll,sourceType: .photoLibrary)
+        })
+        
+        .navigationBarTitle("Skin Classifier")
+        
     }
     
 }

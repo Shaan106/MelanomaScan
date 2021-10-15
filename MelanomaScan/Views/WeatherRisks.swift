@@ -10,6 +10,8 @@ import SwiftUI
 struct WeatherRisks: View {
     var body: some View {
         Text("Weather Risks Page")
+        
+        .navigationBarTitle("Weather Risks")
     }
 }
 

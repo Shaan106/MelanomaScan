@@ -10,6 +10,7 @@ import SwiftUI
 struct Camera: View {
     var body: some View {
         Text("Camera page")
+        .navigationBarTitle("Camera")
     }
 }
 
