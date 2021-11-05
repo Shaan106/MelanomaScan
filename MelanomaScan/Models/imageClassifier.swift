@@ -50,7 +50,7 @@ class imageClassifier {
         if let output = outputOptional {
             
             if let malignantProbability = output.classLabelProbs["Malignant"] {
-                let roundedProbability = round(malignantProbability * 100) / 100.0
+                let roundedProbability = round(malignantProbability * 1000) / 1000.0
                 return (output.classLabel, roundedProbability)
             }
             return (output.classLabel, 101.3)
@@ -59,8 +59,15 @@ class imageClassifier {
         return ("error2", 101.2)
     }
     
-    func certaintyFunction() {
+    //takes the raw certainty value from the melanoma ml model, and converts it into a usable certainty
+    func certaintyFunction(oldCertainty: Double) -> Double {
         //function to take in pure probability of prediction and return a certainty (ie measure from 50% rather than from 0%
+        var workingCertainty: Double = oldCertainty - 0.5
+        workingCertainty = workingCertainty * 2
+        workingCertainty = sqrt(workingCertainty * workingCertainty)
+        workingCertainty = workingCertainty * 100
+        
+        return workingCertainty
     }
     
 }

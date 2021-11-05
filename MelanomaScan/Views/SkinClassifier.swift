@@ -51,6 +51,8 @@ struct SkinClassifier: View {
             Button("Classify") {
                 showingClassificationWarning = true
                 (self.classificationLabel, self.confidence) = imageClassifierInstance.performImageClassification2(image: imageSelectedFromCameraRoll)
+                //converts confidence from 0-1 to 0-100, adding normalisation
+                self.confidence = imageClassifierInstance.certaintyFunction(oldCertainty: self.confidence)
             }
             .alert( isPresented: $showingClassificationWarning) {
                 Alert(
