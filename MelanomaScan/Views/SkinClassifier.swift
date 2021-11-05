@@ -9,13 +9,13 @@ import SwiftUI
 
 struct SkinClassifier: View {
     
-    //display variables to do with the output of image classification
-    private var listOfImages = ["testImageMalignant1","testImageMalignant2","testImageMalignant3","testImageBenign1","testImageBenign2","testImageBenign3"]
-    @State private var currentImageName = "testImageMalignant1"
+    private var initialImageName = "initialImage"
     @State private var classificationLabel: String = ""
     @State private var confidence: Double = 0
     
+    //states affecting look of view
     @State private var imageChosen: Double = 1
+    @State private var showingClassificationWarning = false
     
     //picture picker
     @State var changeClassificationImage = false
@@ -29,14 +29,6 @@ struct SkinClassifier: View {
         
         VStack {
             
-            //picker to select image for classification
-            Picker("", selection: $currentImageName) {
-                            ForEach(listOfImages, id: \.self) {
-                                Text($0)
-                            }
-                        }
-            .padding()
-            
             //displaying chosen image, as well as information about classification of that image
             Button(action: {
                 changeClassificationImage = true
@@ -48,7 +40,7 @@ struct SkinClassifier: View {
                         .resizable()
                         .frame(width: 250, height: 250)
                 } else {
-                    Image(currentImageName)
+                    Image(initialImageName)
                         .resizable()
                         //.frame(width:UIScreen.main.bounds.width*(3/4), height:UIScreen.main.bounds.height*(1/4))
                         .frame(width:250,height:250)
@@ -57,7 +49,16 @@ struct SkinClassifier: View {
             
             //button to call subroutine to classify image
             Button("Classify") {
-                (self.classificationLabel, self.confidence) = imageClassifierInstance.performImageClassification(imageName: currentImageName)
+                showingClassificationWarning = true
+                (self.classificationLabel, self.confidence) = imageClassifierInstance.performImageClassification2(image: imageSelectedFromCameraRoll)
+            }
+            .alert( isPresented: $showingClassificationWarning) {
+                Alert(
+                    title: Text("[MESSAGE ABOUT ML ALGORITHM NOT BEING PERFECT]"),
+                    message: Text("Message"),
+                    dismissButton: .default(Text("I understand"), action: {
+                    })
+                )
             }
             
             //what the image is classified as

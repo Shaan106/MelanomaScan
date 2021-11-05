@@ -36,6 +36,29 @@ class imageClassifier {
         return ("error2", 101.2)
     }
     
+    func performImageClassification2(image: UIImage) -> (String, Double) {
+        
+        let img = image
+        
+        guard let resizedImage = img.resizeTo(size: CGSize(width:750, height:750)),
+              let buffer = resizedImage.toBuffer() else {
+            return ("error1", 101.1)
+        }
+        
+        let outputOptional = try? model.prediction(image: buffer)
+        
+        if let output = outputOptional {
+            
+            if let malignantProbability = output.classLabelProbs["Malignant"] {
+                let roundedProbability = round(malignantProbability * 100) / 100.0
+                return (output.classLabel, roundedProbability)
+            }
+            return (output.classLabel, 101.3)
+        }
+        
+        return ("error2", 101.2)
+    }
+    
     func certaintyFunction() {
         //function to take in pure probability of prediction and return a certainty (ie measure from 50% rather than from 0%
     }
