@@ -15,8 +15,10 @@ struct ImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage
     @Environment(\.presentationMode) private var presentationMode
     
+    //defines the source of the UIImagePickerControllere
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
+    //Makes the controller, allowing the app to interact with the photo library
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
             
             let imagePicker = UIImagePickerController()
@@ -28,10 +30,10 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        // add stuff
+        // add stuff later if needed
     }
     
-    
+    //Actual picking of the image
     final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
         var parent: ImagePicker
