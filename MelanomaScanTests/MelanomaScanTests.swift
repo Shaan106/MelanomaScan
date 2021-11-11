@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import MelanomaScan
+//@testable import MelanomaScan
 
 class MelanomaScanTests: XCTestCase {
 

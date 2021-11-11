@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct InformationPage: View {
+    
+    @State private var riskFactorAge: String = "" //convert to Int16 later
+    
     var body: some View {
-        Text("Information page")
-        
+        VStack {
+            TextField("Enter age", text: $riskFactorAge)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            Button("Save") {
+
+            }
+        }.padding()
         .navigationBarTitle("Information Page")
     }
 }

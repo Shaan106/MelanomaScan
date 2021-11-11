@@ -23,7 +23,7 @@ struct SkinClassifier: View {
     @State var imageSelectedFromCameraRoll = UIImage()
     
     //creates instance of imageClassifier class
-    let imageClassifierInstance = imageClassifier()
+    let imageClassifierInstance = ImageClassifier()
         
     var body: some View {
         
