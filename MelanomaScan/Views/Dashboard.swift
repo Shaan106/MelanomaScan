@@ -24,7 +24,7 @@ struct Dashboard: View {
                 NavigationLink("To Camera", destination: Camera())
                     .padding()
                 
-                NavigationLink("To Information Page", destination: InformationPage())
+                NavigationLink("To Information Page", destination: InformationPage(coreDM: CoreDataManager()))
                     .padding()
                 
                 NavigationLink("To Reminders", destination: Reminders())
