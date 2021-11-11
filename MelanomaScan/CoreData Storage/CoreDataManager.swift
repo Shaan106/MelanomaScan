@@ -22,19 +22,7 @@ class CoreDataManager {
         }
     }
     
-    //saves the current risk factor (age only in this case)
-//    func saveRiskFactorAge(age: Int16) {
-//        //instance of riskFactors
-//        let riskFactors = RiskFactors(context: persistentContainer.viewContext)
-//        riskFactors.age = age
-//
-//        do {
-//            try persistentContainer.viewContext.save()
-//        } catch {
-//            print("Failed to save risk factors \(error)")
-//        }
-//    }
-    
+    //saves the current risk factor (only the name in this case)
     func saveRiskFactorName(name: String) {
         //instance of riskFactors
         let riskFactors = RiskFactors(context: persistentContainer.viewContext)
@@ -56,6 +44,19 @@ class CoreDataManager {
             return try persistentContainer.viewContext.fetch(fetchRequest)
         } catch {
             return []
+        }
+    }
+    
+    //deletes from memory
+    func deleteName(riskFactor: RiskFactors) {
+        
+        persistentContainer.viewContext.delete(riskFactor)
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            persistentContainer.viewContext.rollback()
+            print("Failed to save context \(error)")
         }
     }
 }

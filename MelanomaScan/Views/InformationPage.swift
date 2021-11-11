@@ -31,9 +31,20 @@ struct InformationPage: View {
                 populateNames()
             }
             
-            List(names, id: \.self) { name in
-                Text(name.name ?? "")
+            //displays names in a way that they can be deleted
+            List {
+                ForEach(names, id: \.self) { name in
+                    Text(name.name ?? "")
+                }.onDelete(perform: {indexSet in
+                    indexSet.forEach{ index in
+                        let name = names[index]
+                        //delete the name using core data manager
+                        coreDM.deleteName(riskFactor: name)
+                        populateNames()
+                    }
+                })
             }
+            
             
         }.padding()
         .navigationBarTitle("Information Page")
