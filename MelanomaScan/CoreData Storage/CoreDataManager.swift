@@ -59,4 +59,13 @@ class CoreDataManager {
             print("Failed to save context \(error)")
         }
     }
+    
+    func updateRiskFactor() {
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            persistentContainer.viewContext.rollback()
+        }
+    }
 }
