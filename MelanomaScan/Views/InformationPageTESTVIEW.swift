@@ -28,27 +28,27 @@ struct InformationPageTESTVIEW: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             Button("Save") {
                 //create a view model layer, and call this from that class -NOT THE UI
-                coreDM.saveRiskFactorName(name: riskFactorName)
+                coreDM.saveRiskFactorValue(stringValue: riskFactorName)
                 populateNames()
             }
             
             //displays names in a way that they can be deleted
             List {
                 ForEach(riskFactorNames, id: \.self) { name in
-                    //NavigationLink(destination: RiskFactorDetailTESTVIEW(riskFactor: name, coreDM: coreDM), label: Text(name.name ?? ""))
-                    
-                    NavigationLink(destination: RiskFactorDetailTESTVIEW(riskFactor: name, coreDM: coreDM, needsRefresh: $needsRefresh), label: {
-                        Text(name.name ?? "")
+                    NavigationLink(destination: RiskFactorDetail(riskFactor: name, coreDM: coreDM, needsRefresh: $needsRefresh), label: {
+                        Text(name.value ?? "")
                     })
                     
                 }.onDelete(perform: {indexSet in
                     indexSet.forEach{ index in
                         let name = riskFactorNames[index]
                         //delete the name using core data manager
-                        coreDM.deleteName(riskFactor: name)
+                        coreDM.deleteRiskFactor(riskFactor: name)
                         populateNames()
                     }
                 })
+                
+            //This is just to make sure that everything stays up to date.
             }.listStyle(PlainListStyle())
             .accentColor(needsRefresh ? .black: .white)
             

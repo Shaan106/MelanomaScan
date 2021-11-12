@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RiskFactorDetailTESTVIEW: View {
+struct RiskFactorDetail: View {
     
     let riskFactor: RiskFactors
     @State var riskFactorName: String = ""
@@ -16,12 +16,15 @@ struct RiskFactorDetailTESTVIEW: View {
     
     var body: some View {
         VStack {
-            TextField(riskFactor.name ?? "", text: $riskFactorName)
+            
+            Text(riskFactor.value ?? "")
+            
+            TextField(riskFactor.value ?? "", text: $riskFactorName)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             Button("Update") {
                 if !riskFactorName.isEmpty {
-                    riskFactor.name = riskFactorName
+                    riskFactor.value = riskFactorName
                     coreDM.updateRiskFactor()
                     needsRefresh.toggle()
                 }
@@ -30,13 +33,13 @@ struct RiskFactorDetailTESTVIEW: View {
             Text("ADD MORE INFO ABOUT RISK FACTOR")
                 .padding()
             
-        }
+        }.navigationBarTitle(riskFactor.name ?? "")
     }
 }
 
 struct RiskFactorDetailTESTVIEW_Previews: PreviewProvider {
     static var previews: some View {
         let riskFactor = RiskFactors()
-        RiskFactorDetailTESTVIEW(riskFactor: riskFactor, coreDM: CoreDataManager(), needsRefresh: .constant(false))
+        RiskFactorDetail(riskFactor: riskFactor, coreDM: CoreDataManager(), needsRefresh: .constant(false))
     }
 }

@@ -9,54 +9,57 @@ import SwiftUI
 
 struct InformationPage: View {
     
+    let coreDataManager: CoreDataManager
+    @State private var riskFactorValue: String = "" //convert to other data types later
+    @State private var needsRefresh: Bool = false
+    @State private var riskFactorsList: [RiskFactors] = [RiskFactors]()
+    
     let coreDataModel = CoreDataModel()
-    let coreDM: CoreDataManager
-    @State private var riskFactorName: String = "" //convert to Int16 later
-    //use a viewmodel for the variable below again.
-    //state is used to make sure user interface is in sync with the data.
-    @State private var names: [RiskFactors] = [RiskFactors]()
+    let stringListOfRiskFactors = ["Age", "Gender", "Skin Type", "Number of Moles"]
     
     //again into a VM model
-    
+    private func populateRiskFactors() {
+        riskFactorsList = coreDataManager.getAllNames()
+    }
+
     var body: some View {
-//        VStack {
-//            //input risk factors and save using the save button
-//            TextField("Enter name", text: $riskFactorName)
-//                .textFieldStyle(RoundedBorderTextFieldStyle())
-//            Button("Save") {
-//                //create a view model layer, and call this from that class -NOT THE UI
-//                coreDM.saveRiskFactorName(name: riskFactorName)
-//                populateNames()
-//            }
-//            
-//            //displays names in a way that they can be deleted
-//            List {
-//                ForEach(names, id: \.self) { name in
-//                    Text(name.name ?? "")
-//                }.onDelete(perform: {indexSet in
-//                    indexSet.forEach{ index in
-//                        let name = names[index]
-//                        //delete the name using core data manager
-//                        coreDM.deleteName(riskFactor: name)
-//                        populateNames()
-//                    }
-//                })
-//            }
-//            
-//            
-//        }.padding()
-//        .navigationBarTitle("Information Page")
-//        
-//        .onAppear(perform: {
-//            populateNames()
-//        })
-        Text("temp body")
+        VStack {
+            
+            //displays names in a way that they can be deleted
+            List {
+                ForEach(riskFactorsList, id: \.self) { riskFactor in
+                    NavigationLink(destination: RiskFactorDetail(riskFactor: riskFactor, coreDM: coreDataManager, needsRefresh: $needsRefresh), label: {
+                        HStack {
+                            Text(riskFactor.name ?? "")
+                            Spacer()
+                            Text(riskFactor.value ?? "")
+                        }
+                    })
+                }
+                
+            //This is just to make sure that everything stays up to date.
+            }
+            .listStyle(PlainListStyle())
+            .accentColor(needsRefresh ? .black: .white)
+            
+            Button("Reset all risk factors") {
+                // coreDataManager.saveRiskFactorValue(stringValue: riskFactorValue)
+                coreDataModel.resetRiskFactors(coreDataManager: coreDataManager, listOfRiskFactors: stringListOfRiskFactors)
+                populateRiskFactors()
+                //needsRefresh.toggle()
+            }.padding()
+            
+        }.navigationBarTitle("Information Page")
+        .onAppear(perform: {
+            populateRiskFactors()
+        })
         
     }
+    
 }
 
 struct InformationPage_Previews: PreviewProvider {
     static var previews: some View {
-        InformationPage(coreDM: CoreDataManager())
+        InformationPage(coreDataManager: CoreDataManager())
     }
 }

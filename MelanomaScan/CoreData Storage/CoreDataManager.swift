@@ -14,7 +14,7 @@ class CoreDataManager {
     let persistentContainer: NSPersistentContainer
     
     init() {
-        persistentContainer = NSPersistentContainer(name: "RiskFactorsPersistence")
+        persistentContainer = NSPersistentContainer(name: "CoreDataStore")
         persistentContainer.loadPersistentStores { (description, error) in
             if let error = error {
                 fatalError("Core Data store failed \(error.localizedDescription)")
@@ -23,10 +23,11 @@ class CoreDataManager {
     }
     
     //saves the current risk factor (only the name in this case)
-    func saveRiskFactorName(name: String) {
+    func saveRiskFactorValue(stringValue: String) {
         //instance of riskFactors
         let riskFactors = RiskFactors(context: persistentContainer.viewContext)
-        riskFactors.name = name
+        riskFactors.name = stringValue
+        riskFactors.value = stringValue
         
         do {
             try persistentContainer.viewContext.save()
@@ -48,7 +49,7 @@ class CoreDataManager {
     }
     
     //deletes from memory
-    func deleteName(riskFactor: RiskFactors) {
+    func deleteRiskFactor(riskFactor: RiskFactors) {
         
         persistentContainer.viewContext.delete(riskFactor)
         
@@ -58,6 +59,23 @@ class CoreDataManager {
             persistentContainer.viewContext.rollback()
             print("Failed to save context \(error)")
         }
+    }
+    
+    func deleteAllRiskFactors() {
+
+        let allRiskFactors: [RiskFactors] = getAllNames()
+        
+        for savedRiskFactor in allRiskFactors {
+            persistentContainer.viewContext.delete(savedRiskFactor)
+        }
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            persistentContainer.viewContext.rollback()
+            print("Failed to save context \(error)")
+        }
+        
     }
     
     func updateRiskFactor() {

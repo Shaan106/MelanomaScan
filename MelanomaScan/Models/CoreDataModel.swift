@@ -9,10 +9,14 @@ import Foundation
 
 class CoreDataModel {
     
-    let coreDM = CoreDataManager()
-    
-    func populateNames() -> [RiskFactors] {
-        return coreDM.getAllNames()
+    func resetRiskFactors(coreDataManager: CoreDataManager, listOfRiskFactors: [String]) {
+        
+        coreDataManager.deleteAllRiskFactors()
+        
+        for item in listOfRiskFactors {
+            coreDataManager.saveRiskFactorValue(stringValue: item)
+        }
+        
     }
     
 }

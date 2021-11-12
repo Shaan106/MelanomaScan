@@ -30,14 +30,14 @@
 		CD52E750271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
 		CD52E751271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
 		CD52E752271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
-		CD6F4367273D25A700937C7B /* RiskFactorsPersistence.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD6F4365273D25A700937C7B /* RiskFactorsPersistence.xcdatamodeld */; };
+		CD6F4367273D25A700937C7B /* CoreDataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD6F4365273D25A700937C7B /* CoreDataStore.xcdatamodeld */; };
 		CD6F4369273D26DD00937C7B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F4368273D26DD00937C7B /* CoreDataManager.swift */; };
 		CD8242642719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8242652719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8242662719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B5273E67570054FD44 /* InformationPage.swift */; };
 		CDC333B8273E68440054FD44 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B7273E68440054FD44 /* CoreDataModel.swift */; };
-		CDC333C0273E6B130054FD44 /* RiskFactorDetailTESTVIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333BF273E6B130054FD44 /* RiskFactorDetailTESTVIEW.swift */; };
+		CDC333C0273E6B130054FD44 /* RiskFactorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,7 @@
 		CD8242632719C449008E44DB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CDC333B5273E67570054FD44 /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
 		CDC333B7273E68440054FD44 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
-		CDC333BF273E6B130054FD44 /* RiskFactorDetailTESTVIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorDetailTESTVIEW.swift; sourceTree = "<group>"; };
+		CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,11 +191,11 @@
 				CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */,
 				CD11A8A22718359000FF1C78 /* Camera.swift */,
 				CDC333B5273E67570054FD44 /* InformationPage.swift */,
+				CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */,
 				CD11A8B2271835CC00FF1C78 /* Reminders.swift */,
 				CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */,
 				7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */,
 				CD11A8AD271835A800FF1C78 /* InformationPageTESTVIEW.swift */,
-				CDC333BF273E6B130054FD44 /* RiskFactorDetailTESTVIEW.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 		CDCCEBA92736A78E00108058 /* CoreData Storage */ = {
 			isa = PBXGroup;
 			children = (
-				CD6F4365273D25A700937C7B /* RiskFactorsPersistence.xcdatamodeld */,
+				CD6F4365273D25A700937C7B /* CoreDataStore.xcdatamodeld */,
 				CD6F4368273D26DD00937C7B /* CoreDataManager.swift */,
 			);
 			path = "CoreData Storage";
@@ -356,13 +356,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDC333C0273E6B130054FD44 /* RiskFactorDetailTESTVIEW.swift in Sources */,
+				CDC333C0273E6B130054FD44 /* RiskFactorDetail.swift in Sources */,
 				CD11A8A32718359000FF1C78 /* Camera.swift in Sources */,
 				7B1C2B5626F6012C00593D7A /* SkinClassifier.swift in Sources */,
 				CDC333B8273E68440054FD44 /* CoreDataModel.swift in Sources */,
 				CD11A8AE271835A800FF1C78 /* InformationPageTESTVIEW.swift in Sources */,
 				CD11A8BB2718361900FF1C78 /* WeatherRisks.swift in Sources */,
-				CD6F4367273D25A700937C7B /* RiskFactorsPersistence.xcdatamodeld in Sources */,
+				CD6F4367273D25A700937C7B /* CoreDataStore.xcdatamodeld in Sources */,
 				CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */,
 				7B1C2B5426F6012C00593D7A /* MelanomaScanApp.swift in Sources */,
 				7B9D4C432705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
@@ -704,13 +704,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CD6F4365273D25A700937C7B /* RiskFactorsPersistence.xcdatamodeld */ = {
+		CD6F4365273D25A700937C7B /* CoreDataStore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				CD6F4366273D25A700937C7B /* RiskFactorsPersistence.xcdatamodel */,
 			);
 			currentVersion = CD6F4366273D25A700937C7B /* RiskFactorsPersistence.xcdatamodel */;
-			path = RiskFactorsPersistence.xcdatamodeld;
+			path = CoreDataStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
