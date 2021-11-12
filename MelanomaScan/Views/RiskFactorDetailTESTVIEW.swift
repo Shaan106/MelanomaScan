@@ -12,6 +12,7 @@ struct RiskFactorDetailTESTVIEW: View {
     let riskFactor: RiskFactors
     @State var riskFactorName: String = ""
     let coreDM: CoreDataManager
+    @Binding var needsRefresh:Bool
     
     var body: some View {
         VStack {
@@ -22,6 +23,7 @@ struct RiskFactorDetailTESTVIEW: View {
                 if !riskFactorName.isEmpty {
                     riskFactor.name = riskFactorName
                     coreDM.updateRiskFactor()
+                    needsRefresh.toggle()
                 }
             }.padding()
             
@@ -35,6 +37,6 @@ struct RiskFactorDetailTESTVIEW: View {
 struct RiskFactorDetailTESTVIEW_Previews: PreviewProvider {
     static var previews: some View {
         let riskFactor = RiskFactors()
-        RiskFactorDetailTESTVIEW(riskFactor: riskFactor, coreDM: CoreDataManager())
+        RiskFactorDetailTESTVIEW(riskFactor: riskFactor, coreDM: CoreDataManager(), needsRefresh: .constant(false))
     }
 }

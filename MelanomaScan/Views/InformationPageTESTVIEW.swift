@@ -5,8 +5,6 @@
 //  Created by Aasmaan Yadav on 14/10/21.
 //
 
-//, needsRefresh: .constant(false) | , needsRefresh: $needsRefresh | @Binding var needsRefresh:Bool
-
 import SwiftUI
 
 struct InformationPageTESTVIEW: View {
@@ -16,6 +14,7 @@ struct InformationPageTESTVIEW: View {
     //use a viewmodel for the variable below again.
     //state is used to make sure user interface is in sync with the data.
     @State private var riskFactorNames: [RiskFactors] = [RiskFactors]()
+    @State private var needsRefresh: Bool = false
     
     //again into a VM model
     private func populateNames() {
@@ -38,7 +37,7 @@ struct InformationPageTESTVIEW: View {
                 ForEach(riskFactorNames, id: \.self) { name in
                     //NavigationLink(destination: RiskFactorDetailTESTVIEW(riskFactor: name, coreDM: coreDM), label: Text(name.name ?? ""))
                     
-                    NavigationLink(destination: RiskFactorDetailTESTVIEW(riskFactor: name, coreDM: coreDM), label: {
+                    NavigationLink(destination: RiskFactorDetailTESTVIEW(riskFactor: name, coreDM: coreDM, needsRefresh: $needsRefresh), label: {
                         Text(name.name ?? "")
                     })
                     
@@ -50,7 +49,8 @@ struct InformationPageTESTVIEW: View {
                         populateNames()
                     }
                 })
-            }
+            }.listStyle(PlainListStyle())
+            .accentColor(needsRefresh ? .black: .white)
             
             
         }.padding()
