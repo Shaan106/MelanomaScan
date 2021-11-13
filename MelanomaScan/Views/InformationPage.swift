@@ -14,8 +14,8 @@ struct InformationPage: View {
     @State private var needsRefresh: Bool = false
     @State private var riskFactorsList: [RiskFactors] = [RiskFactors]()
     
-    let coreDataModel = CoreDataModel()
-    let stringListOfRiskFactors = ["Age", "Gender", "Skin Type", "Number of Moles"]
+    let riskFactorsModel = RiskFactorsModel()
+    let stringListOfRiskFactors = ["Age", "Gender", "Skin Type", "Eye Colour", "Hair Colour", "Number of Moles", "Freckles", "Family History", "Diseases and Conditions", "Body Mass Index"]
     
     //again into a VM model
     private func populateRiskFactors() {
@@ -28,7 +28,7 @@ struct InformationPage: View {
             //displays names in a way that they can be deleted
             List {
                 ForEach(riskFactorsList, id: \.self) { riskFactor in
-                    NavigationLink(destination: RiskFactorDetail(riskFactor: riskFactor, coreDM: coreDataManager, needsRefresh: $needsRefresh), label: {
+                    NavigationLink(destination: RiskFactorDetail(riskFactor: riskFactor, coreDM: coreDataManager, needsRefresh: $needsRefresh, whichPickerToShow: riskFactor.name ?? "", tempPickerList: riskFactorsModel.returnStringListOfRiskFactors(name: (riskFactor.name ?? "") )), label: {
                         HStack {
                             Text(riskFactor.name ?? "")
                             Spacer()
@@ -44,7 +44,7 @@ struct InformationPage: View {
             
             Button("Reset all risk factors") {
                 // coreDataManager.saveRiskFactorValue(stringValue: riskFactorValue)
-                coreDataModel.resetRiskFactors(coreDataManager: coreDataManager, listOfRiskFactors: stringListOfRiskFactors)
+                riskFactorsModel.resetRiskFactors(coreDataManager: coreDataManager, listOfRiskFactors: stringListOfRiskFactors)
                 populateRiskFactors()
                 //needsRefresh.toggle()
             }.padding()

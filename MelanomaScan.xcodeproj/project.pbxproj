@@ -21,7 +21,6 @@
 		7B9DDAB42708762600AB4DA6 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */; };
 		CD11A89E2718357F00FF1C78 /* FunctionalImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */; };
 		CD11A8A32718359000FF1C78 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8A22718359000FF1C78 /* Camera.swift */; };
-		CD11A8AE271835A800FF1C78 /* InformationPageTESTVIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8AD271835A800FF1C78 /* InformationPageTESTVIEW.swift */; };
 		CD11A8B3271835CC00FF1C78 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8B2271835CC00FF1C78 /* Reminders.swift */; };
 		CD11A8BB2718361900FF1C78 /* WeatherRisks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */; };
 		CD52E746270EF48800CA2B2B /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E745270EF48800CA2B2B /* ImageClassifier.swift */; };
@@ -36,7 +35,7 @@
 		CD8242652719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8242662719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B5273E67570054FD44 /* InformationPage.swift */; };
-		CDC333B8273E68440054FD44 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B7273E68440054FD44 /* CoreDataModel.swift */; };
+		CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */; };
 		CDC333C0273E6B130054FD44 /* RiskFactorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 		7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalImageStorage.swift; sourceTree = "<group>"; };
 		CD11A8A22718359000FF1C78 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
-		CD11A8AD271835A800FF1C78 /* InformationPageTESTVIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPageTESTVIEW.swift; sourceTree = "<group>"; };
 		CD11A8B2271835CC00FF1C78 /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
 		CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRisks.swift; sourceTree = "<group>"; };
 		CD52E745270EF48800CA2B2B /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
@@ -84,7 +82,7 @@
 		CD6F4368273D26DD00937C7B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CD8242632719C449008E44DB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CDC333B5273E67570054FD44 /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
-		CDC333B7273E68440054FD44 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorsModel.swift; sourceTree = "<group>"; };
 		CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,7 +193,6 @@
 				CD11A8B2271835CC00FF1C78 /* Reminders.swift */,
 				CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */,
 				7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */,
-				CD11A8AD271835A800FF1C78 /* InformationPageTESTVIEW.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,7 +210,7 @@
 			children = (
 				CD52E745270EF48800CA2B2B /* ImageClassifier.swift */,
 				CD8242632719C449008E44DB /* ImagePicker.swift */,
-				CDC333B7273E68440054FD44 /* CoreDataModel.swift */,
+				CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,8 +356,7 @@
 				CDC333C0273E6B130054FD44 /* RiskFactorDetail.swift in Sources */,
 				CD11A8A32718359000FF1C78 /* Camera.swift in Sources */,
 				7B1C2B5626F6012C00593D7A /* SkinClassifier.swift in Sources */,
-				CDC333B8273E68440054FD44 /* CoreDataModel.swift in Sources */,
-				CD11A8AE271835A800FF1C78 /* InformationPageTESTVIEW.swift in Sources */,
+				CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */,
 				CD11A8BB2718361900FF1C78 /* WeatherRisks.swift in Sources */,
 				CD6F4367273D25A700937C7B /* CoreDataStore.xcdatamodeld in Sources */,
 				CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */,

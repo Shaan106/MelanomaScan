@@ -75,8 +75,6 @@ struct SkinClassifier: View {
             
             NavigationLink("To Camera (choose new img)", destination: Camera())
             
-            NavigationLink("To Information Page TESTVIEW (change risk profile)", destination: InformationPageTESTVIEW(coreDM: CoreDataManager()))
-            
         }.sheet(isPresented: $openCameraRoll, content: {
             ImagePicker(selectedImage: $imageSelectedFromCameraRoll,sourceType: .photoLibrary)
         })

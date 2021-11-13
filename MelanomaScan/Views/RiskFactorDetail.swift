@@ -10,21 +10,36 @@ import SwiftUI
 struct RiskFactorDetail: View {
     
     let riskFactor: RiskFactors
-    @State var riskFactorName: String = ""
     let coreDM: CoreDataManager
-    @Binding var needsRefresh:Bool
+    @Binding var needsRefresh: Bool
+    @State var whichPickerToShow: String
+    //@State var riskFactorName: String = ""
+    //let tempPickerList = ["hi", "bye", "bycycle", "bicycle", "bike"]
+    let tempPickerList: [String]
+    @State var selectedValue = ""
     
     var body: some View {
         VStack {
             
-            Text(riskFactor.value ?? "")
+            Text( (riskFactor.value ?? "") + " | Dev Value: " + String(riskFactor.numericalRiskValue))
             
-            TextField(riskFactor.value ?? "", text: $riskFactorName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+//            TextField(riskFactor.value ?? "", text: $riskFactorName)
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                .padding()
+
+            Picker("Please choose a color", selection: $selectedValue) {
+                            ForEach(tempPickerList, id: \.self) {
+                                Text($0)
+                            }
+                }.padding()
+            
+            Text("You selected: \(selectedValue)")
                 .padding()
+            
+            
             Button("Update") {
-                if !riskFactorName.isEmpty {
-                    riskFactor.value = riskFactorName
+                if !selectedValue.isEmpty {
+                    riskFactor.value = selectedValue
                     coreDM.updateRiskFactor()
                     needsRefresh.toggle()
                 }
@@ -40,6 +55,6 @@ struct RiskFactorDetail: View {
 struct RiskFactorDetailTESTVIEW_Previews: PreviewProvider {
     static var previews: some View {
         let riskFactor = RiskFactors()
-        RiskFactorDetail(riskFactor: riskFactor, coreDM: CoreDataManager(), needsRefresh: .constant(false))
+        RiskFactorDetail(riskFactor: riskFactor, coreDM: CoreDataManager(), needsRefresh: .constant(false), whichPickerToShow: "Skin Type", tempPickerList: ["hi", "bye", "bycycle", "bicycle", "bike"])
     }
 }

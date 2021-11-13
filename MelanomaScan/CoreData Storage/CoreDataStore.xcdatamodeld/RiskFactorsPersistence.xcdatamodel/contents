@@ -2,9 +2,10 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="RiskFactors" representedClassName="RiskFactors" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String"/>
+        <attribute name="numericalRiskValue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="value" attributeType="String"/>
     </entity>
     <elements>
-        <element name="RiskFactors" positionX="-63" positionY="-18" width="128" height="14"/>
+        <element name="RiskFactors" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>
