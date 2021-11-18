@@ -11,6 +11,7 @@ struct RiskFactorDetail: View {
     
     let riskFactor: RiskFactors
     let coreDM: CoreDataManager
+    let riskFactorsModel = RiskFactorsModel()
     @Binding var needsRefresh: Bool
     @State var whichPickerToShow: String
     //@State var riskFactorName: String = ""
@@ -40,6 +41,7 @@ struct RiskFactorDetail: View {
             Button("Update") {
                 if !selectedValue.isEmpty {
                     riskFactor.value = selectedValue
+                    riskFactor.numericalRiskValue = riskFactorsModel.returnNumericalRiskValue(pickerName: whichPickerToShow, pickerChoice: selectedValue)
                     coreDM.updateRiskFactor()
                     needsRefresh.toggle()
                 }

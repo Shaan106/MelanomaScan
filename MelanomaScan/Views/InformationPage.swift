@@ -21,7 +21,7 @@ struct InformationPage: View {
     private func populateRiskFactors() {
         riskFactorsList = coreDataManager.getAllNames()
     }
-
+    
     var body: some View {
         VStack {
             
@@ -37,7 +37,7 @@ struct InformationPage: View {
                     })
                 }
                 
-            //This is just to make sure that everything stays up to date.
+                //This is just to make sure that everything stays up to date.
             }
             .listStyle(PlainListStyle())
             .accentColor(needsRefresh ? .black: .white)
@@ -49,10 +49,12 @@ struct InformationPage: View {
                 //needsRefresh.toggle()
             }.padding()
             
+            Text(String( riskFactorsModel.calculateFinalRiskFactor(riskFactorsList: riskFactorsList) )).padding()
+            
         }.navigationBarTitle("Information Page")
-        .onAppear(perform: {
-            populateRiskFactors()
-        })
+            .onAppear(perform: {
+                populateRiskFactors()
+            })
         
     }
     

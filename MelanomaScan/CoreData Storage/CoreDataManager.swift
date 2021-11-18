@@ -27,8 +27,8 @@ class CoreDataManager {
         //instance of riskFactors
         let riskFactors = RiskFactors(context: persistentContainer.viewContext)
         riskFactors.name = stringValue
-        riskFactors.value = stringValue
-        riskFactors.numericalRiskValue = 0
+        riskFactors.value = "n/a"
+        riskFactors.numericalRiskValue = -1
         
         do {
             try persistentContainer.viewContext.save()
