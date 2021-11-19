@@ -49,7 +49,7 @@ struct InformationPage: View {
                 //needsRefresh.toggle()
             }.padding()
             
-            Text(String( riskFactorsModel.calculateFinalRiskFactor(riskFactorsList: riskFactorsList) )).padding()
+            Text( riskFactorsModel.calculateFinalRiskFactor(riskFactorsList: riskFactorsList) ).padding()
             
         }.navigationBarTitle("Information Page")
             .onAppear(perform: {
