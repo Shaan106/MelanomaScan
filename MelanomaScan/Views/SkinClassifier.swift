@@ -20,7 +20,12 @@ struct SkinClassifier: View {
     //picture picker
     @State var changeClassificationImage = false
     @State var openCameraRoll = false
+    @State var openCamera = false
     @State var imageSelectedFromCameraRoll = UIImage()
+    
+    @State var sourceTypeChoice: UIImagePickerController.SourceType = .photoLibrary
+    
+    @State var showChooseCameraOrRollSheet = false
     
     //creates instance of imageClassifier class
     let imageClassifierInstance = ImageClassifier()
@@ -31,8 +36,8 @@ struct SkinClassifier: View {
             
             //displaying chosen image, as well as information about classification of that image
             Button(action: {
-                changeClassificationImage = true
-                openCameraRoll = true
+                
+                showChooseCameraOrRollSheet = true
                 
             }, label: {
                 if changeClassificationImage == true {
@@ -45,7 +50,23 @@ struct SkinClassifier: View {
                         //.frame(width:UIScreen.main.bounds.width*(3/4), height:UIScreen.main.bounds.height*(1/4))
                         .frame(width:250,height:250)
                 }
-            })
+            }).actionSheet(isPresented: $showChooseCameraOrRollSheet) {
+                ActionSheet(title: Text("Select Photo"),
+                            message: Text("Choose"),
+                            buttons: [
+                                .default(Text("Photo Library")) {
+                                    changeClassificationImage = true
+                                    openCameraRoll = true
+                                    sourceTypeChoice = .photoLibrary
+                                },
+                                .default(Text("Camera")) {
+                                    changeClassificationImage = true
+                                    openCameraRoll = true //make sure cameropen
+                                    sourceTypeChoice = .camera
+                                },
+                                .cancel()
+                            ])
+            }
             
             //button to call subroutine to classify image
             Button("Classify") {
@@ -76,7 +97,7 @@ struct SkinClassifier: View {
             NavigationLink("To Camera (choose new img)", destination: Camera())
             
         }.sheet(isPresented: $openCameraRoll, content: {
-            ImagePicker(selectedImage: $imageSelectedFromCameraRoll,sourceType: .photoLibrary)
+            ImagePicker(selectedImage: $imageSelectedFromCameraRoll, sourceType: sourceTypeChoice)
         })
         
         .navigationBarTitle("Skin Classifier")
