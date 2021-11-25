@@ -11,6 +11,8 @@ struct Camera: View {
     
     @State var openCamera = false
     @State var shownImage = UIImage()
+    @State var changeShownImage = false
+    let initialImageName = "initialImage"
     
     var body: some View {
         
@@ -18,9 +20,22 @@ struct Camera: View {
             Text("Camera page")
             .navigationBarTitle("Camera")
             
-            Button("Open Camera") {
+            Button(action: {
+                changeShownImage = true
                 openCamera = true
-            }
+                
+            }, label: {
+                if changeShownImage == true {
+                    Image(uiImage: shownImage)
+                        .resizable()
+                        .frame(width: 250, height: 250)
+                } else {
+                    Image(initialImageName)
+                        .resizable()
+                        .frame(width:250,height:250)
+                }
+            })
+            
             
         }.sheet(isPresented: $openCamera, content: {
             ImagePicker(selectedImage: $shownImage, sourceType: .camera)
