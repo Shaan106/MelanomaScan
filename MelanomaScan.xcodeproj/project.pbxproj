@@ -20,7 +20,6 @@
 		7B9DDAB32708762600AB4DA6 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */; };
 		7B9DDAB42708762600AB4DA6 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */; };
 		CD11A89E2718357F00FF1C78 /* FunctionalImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */; };
-		CD11A8A32718359000FF1C78 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8A22718359000FF1C78 /* Camera.swift */; };
 		CD11A8B3271835CC00FF1C78 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8B2271835CC00FF1C78 /* Reminders.swift */; };
 		CD11A8BB2718361900FF1C78 /* WeatherRisks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */; };
 		CD52E746270EF48800CA2B2B /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E745270EF48800CA2B2B /* ImageClassifier.swift */; };
@@ -29,8 +28,10 @@
 		CD52E750271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
 		CD52E751271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
 		CD52E752271832DD00CA2B2B /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52E74F271832DD00CA2B2B /* Dashboard.swift */; };
+		CD5B5C152750DC2B00CB1EF3 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B5C142750DC2B00CB1EF3 /* ImageSaver.swift */; };
 		CD6F4367273D25A700937C7B /* CoreDataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD6F4365273D25A700937C7B /* CoreDataStore.xcdatamodeld */; };
 		CD6F4369273D26DD00937C7B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F4368273D26DD00937C7B /* CoreDataManager.swift */; };
+		CD7BA72C2755884100D8BBD8 /* UIHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7BA72B2755884100D8BBD8 /* UIHelperFunctions.swift */; };
 		CD8242642719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8242652719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8242662719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
@@ -73,13 +74,14 @@
 		7B9D4C422705FE3E002A6A0F /* melanomaModel1(91).mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "melanomaModel1(91).mlmodel"; sourceTree = "<group>"; };
 		7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalImageStorage.swift; sourceTree = "<group>"; };
-		CD11A8A22718359000FF1C78 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		CD11A8B2271835CC00FF1C78 /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
 		CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRisks.swift; sourceTree = "<group>"; };
 		CD52E745270EF48800CA2B2B /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
 		CD52E74F271832DD00CA2B2B /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		CD5B5C142750DC2B00CB1EF3 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		CD6F4366273D25A700937C7B /* RiskFactorsPersistence.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RiskFactorsPersistence.xcdatamodel; sourceTree = "<group>"; };
 		CD6F4368273D26DD00937C7B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CD7BA72B2755884100D8BBD8 /* UIHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelperFunctions.swift; sourceTree = "<group>"; };
 		CD8242632719C449008E44DB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CDC333B5273E67570054FD44 /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
 		CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorsModel.swift; sourceTree = "<group>"; };
@@ -187,7 +189,6 @@
 				CD52E74F271832DD00CA2B2B /* Dashboard.swift */,
 				7B1C2B5526F6012C00593D7A /* SkinClassifier.swift */,
 				CD11A89D2718357F00FF1C78 /* FunctionalImageStorage.swift */,
-				CD11A8A22718359000FF1C78 /* Camera.swift */,
 				CDC333B5273E67570054FD44 /* InformationPage.swift */,
 				CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */,
 				CD11A8B2271835CC00FF1C78 /* Reminders.swift */,
@@ -211,6 +212,8 @@
 				CD52E745270EF48800CA2B2B /* ImageClassifier.swift */,
 				CD8242632719C449008E44DB /* ImagePicker.swift */,
 				CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */,
+				CD5B5C142750DC2B00CB1EF3 /* ImageSaver.swift */,
+				CD7BA72B2755884100D8BBD8 /* UIHelperFunctions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,12 +357,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC333C0273E6B130054FD44 /* RiskFactorDetail.swift in Sources */,
-				CD11A8A32718359000FF1C78 /* Camera.swift in Sources */,
 				7B1C2B5626F6012C00593D7A /* SkinClassifier.swift in Sources */,
+				CD5B5C152750DC2B00CB1EF3 /* ImageSaver.swift in Sources */,
 				CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */,
 				CD11A8BB2718361900FF1C78 /* WeatherRisks.swift in Sources */,
 				CD6F4367273D25A700937C7B /* CoreDataStore.xcdatamodeld in Sources */,
 				CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */,
+				CD7BA72C2755884100D8BBD8 /* UIHelperFunctions.swift in Sources */,
 				7B1C2B5426F6012C00593D7A /* MelanomaScanApp.swift in Sources */,
 				7B9D4C432705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
 				CD11A8B3271835CC00FF1C78 /* Reminders.swift in Sources */,

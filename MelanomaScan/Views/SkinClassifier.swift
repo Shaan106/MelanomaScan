@@ -29,77 +29,103 @@ struct SkinClassifier: View {
     
     //creates instance of imageClassifier class
     let imageClassifierInstance = ImageClassifier()
+    let imageSaver = ImageSaver()
         
     var body: some View {
         
-        VStack {
-            
-            //displaying chosen image, as well as information about classification of that image
-            Button(action: {
+        ZStack {
+            VStack {
                 
-                showChooseCameraOrRollSheet = true
-                
-            }, label: {
-                if changeClassificationImage == true {
-                    Image(uiImage: imageSelectedFromCameraRoll)
-                        .resizable()
-                        .frame(width: 250, height: 250)
-                } else {
-                    Image(initialImageName)
-                        .resizable()
-                        //.frame(width:UIScreen.main.bounds.width*(3/4), height:UIScreen.main.bounds.height*(1/4))
-                        .frame(width:250,height:250)
+                //displaying chosen image, as well as information about classification of that image
+                Button(action: {
+                    
+                    showChooseCameraOrRollSheet = true
+                    
+                }, label: {
+                    if changeClassificationImage == true {
+                        Image(uiImage: imageSelectedFromCameraRoll)
+                            .resizable()
+                            .frame(width: 250, height: 250)
+                    } else {
+                        Image(initialImageName)
+                            .resizable()
+                            //.frame(width:UIScreen.main.bounds.width*(3/4), height:UIScreen.main.bounds.height*(1/4))
+                            .frame(width:250,height:250)
+                    }
+                }).actionSheet(isPresented: $showChooseCameraOrRollSheet) {
+                    ActionSheet(title: Text("Select Photo"),
+                                message: Text("Choose"),
+                                buttons: [
+                                    .default(Text("Photo Library")) {
+                                        changeClassificationImage = true
+                                        openCameraRoll = true
+                                        sourceTypeChoice = .photoLibrary
+                                    },
+                                    .default(Text("Camera")) {
+                                        changeClassificationImage = true
+                                        openCameraRoll = true //make sure cameropen
+                                        sourceTypeChoice = .camera
+                                    },
+                                    .cancel()
+                                ])
                 }
-            }).actionSheet(isPresented: $showChooseCameraOrRollSheet) {
-                ActionSheet(title: Text("Select Photo"),
-                            message: Text("Choose"),
-                            buttons: [
-                                .default(Text("Photo Library")) {
-                                    changeClassificationImage = true
-                                    openCameraRoll = true
-                                    sourceTypeChoice = .photoLibrary
-                                },
-                                .default(Text("Camera")) {
-                                    changeClassificationImage = true
-                                    openCameraRoll = true //make sure cameropen
-                                    sourceTypeChoice = .camera
-                                },
-                                .cancel()
-                            ])
-            }
+                
+                //button to call subroutine to classify image
+                Button("Classify") {
+                    showingClassificationWarning = true
+                    (self.classificationLabel, self.confidence) = imageClassifierInstance.performImageClassification2(image: imageSelectedFromCameraRoll)
+                    //converts confidence from 0-1 to 0-100, adding normalisation
+                    self.confidence = imageClassifierInstance.certaintyFunction(oldCertainty: self.confidence)
+                }
+                .alert( isPresented: $showingClassificationWarning) {
+                    Alert(
+                        title: Text("[MESSAGE ABOUT ML ALGORITHM NOT BEING PERFECT]"),
+                        message: Text("Message"),
+                        dismissButton: .default(Text("I understand"), action: {
+                        })
+                    )
+                }.padding()
+                
+                Button("Save to camera roll") {
+                    
+                    if changeClassificationImage == true {
+                        imageSaver.writeToPhotoAlbum(image: imageSelectedFromCameraRoll)
+                    } else {
+                        imageSaver.writeToPhotoAlbum(image: UIImage(imageLiteralResourceName: initialImageName))
+                    }
+                }
+                
+                //what the image is classified as
+                Text(classificationLabel)
+                    .padding()
+                    .font(.title)
+                
+                //confidence of classification
+                Text(String(confidence))
+                    .padding()
+                    .font(.title)
+                
+            }.sheet(isPresented: $openCameraRoll, content: {
+                ZStack {
+                
+                    
+                
+                if sourceTypeChoice != .photoLibrary {
+                    
+                    ImagePicker(selectedImage: $imageSelectedFromCameraRoll, sourceType: sourceTypeChoice)
+                    
+                    Arc(startAngle: .degrees(0), endAngle: .degrees(360), clockwise: true)
+                        .stroke(.blue, lineWidth: 3)
+                        .frame(width: 125, height: 125)
+                    
+                } else {
+                    ImagePicker(selectedImage: $imageSelectedFromCameraRoll, sourceType: sourceTypeChoice)
+                }
+                    
+                }
+            })
             
-            //button to call subroutine to classify image
-            Button("Classify") {
-                showingClassificationWarning = true
-                (self.classificationLabel, self.confidence) = imageClassifierInstance.performImageClassification2(image: imageSelectedFromCameraRoll)
-                //converts confidence from 0-1 to 0-100, adding normalisation
-                self.confidence = imageClassifierInstance.certaintyFunction(oldCertainty: self.confidence)
-            }
-            .alert( isPresented: $showingClassificationWarning) {
-                Alert(
-                    title: Text("[MESSAGE ABOUT ML ALGORITHM NOT BEING PERFECT]"),
-                    message: Text("Message"),
-                    dismissButton: .default(Text("I understand"), action: {
-                    })
-                )
-            }
-            
-            //what the image is classified as
-            Text(classificationLabel)
-                .padding()
-                .font(.title)
-            
-            //confidence of classification
-            Text(String(confidence))
-                .padding()
-                .font(.title)
-            
-            NavigationLink("To Camera (choose new img)", destination: Camera())
-            
-        }.sheet(isPresented: $openCameraRoll, content: {
-            ImagePicker(selectedImage: $imageSelectedFromCameraRoll, sourceType: sourceTypeChoice)
-        })
-        
+        }
         .navigationBarTitle("Skin Classifier")
         
     }

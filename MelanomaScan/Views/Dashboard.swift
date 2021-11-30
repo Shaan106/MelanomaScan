@@ -21,9 +21,6 @@ struct Dashboard: View {
                 NavigationLink("To Functional Image Storage", destination: FunctionalImageStorage())
                     .padding()
                 
-                NavigationLink("To Camera", destination: Camera())
-                    .padding()
-                
                 NavigationLink("To Information Page", destination: InformationPage(coreDataManager: CoreDataManager()))
                     .padding()
                 

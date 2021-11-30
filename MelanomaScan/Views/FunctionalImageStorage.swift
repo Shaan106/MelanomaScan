@@ -11,9 +11,6 @@ struct FunctionalImageStorage: View {
     var body: some View {
         VStack {
             Text("Functional Image Storage Page")
-            
-            NavigationLink("To Camera", destination: Camera())
-                .padding()
         }
         .navigationBarTitle("Functional Image Storage")
         
