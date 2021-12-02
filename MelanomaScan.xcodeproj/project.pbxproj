@@ -36,6 +36,8 @@
 		CD8242642719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8242652719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8242662719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
+		CD8BDD552758D401002EF5A6 /* RemindersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BDD542758D401002EF5A6 /* RemindersManager.swift */; };
+		CD8BDD572758D4E6002EF5A6 /* TEMP_NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */; };
 		CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B5273E67570054FD44 /* InformationPage.swift */; };
 		CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */; };
 		CDC333C0273E6B130054FD44 /* RiskFactorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */; };
@@ -85,6 +87,8 @@
 		CD7BA72B2755884100D8BBD8 /* UIHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelperFunctions.swift; sourceTree = "<group>"; };
 		CD7BA72D2756876F00D8BBD8 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		CD8242632719C449008E44DB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CD8BDD542758D401002EF5A6 /* RemindersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersManager.swift; sourceTree = "<group>"; };
+		CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMP_NotificationView.swift; sourceTree = "<group>"; };
 		CDC333B5273E67570054FD44 /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
 		CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorsModel.swift; sourceTree = "<group>"; };
 		CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorDetail.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				CDC333B5273E67570054FD44 /* InformationPage.swift */,
 				CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */,
 				CD11A8B2271835CC00FF1C78 /* Reminders.swift */,
+				CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */,
 				CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */,
 				7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */,
 			);
@@ -217,6 +222,7 @@
 				CD5B5C142750DC2B00CB1EF3 /* ImageSaver.swift */,
 				CD7BA72B2755884100D8BBD8 /* UIHelperFunctions.swift */,
 				CD7BA72D2756876F00D8BBD8 /* LocalNotificationManager.swift */,
+				CD8BDD542758D401002EF5A6 /* RemindersManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC333C0273E6B130054FD44 /* RiskFactorDetail.swift in Sources */,
+				CD8BDD572758D4E6002EF5A6 /* TEMP_NotificationView.swift in Sources */,
 				7B1C2B5626F6012C00593D7A /* SkinClassifier.swift in Sources */,
 				CD5B5C152750DC2B00CB1EF3 /* ImageSaver.swift in Sources */,
 				CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */,
@@ -374,6 +381,7 @@
 				7B9DDAB22708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
 				CD52E750271832DD00CA2B2B /* Dashboard.swift in Sources */,
 				CD8242642719C449008E44DB /* ImagePicker.swift in Sources */,
+				CD8BDD552758D401002EF5A6 /* RemindersManager.swift in Sources */,
 				CD52E746270EF48800CA2B2B /* ImageClassifier.swift in Sources */,
 				CD6F4369273D26DD00937C7B /* CoreDataManager.swift in Sources */,
 				CD11A89E2718357F00FF1C78 /* FunctionalImageStorage.swift in Sources */,

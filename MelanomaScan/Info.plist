@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>The melanoma scanner requires access to the calendars in order to remind you to check for melanoma regularly</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>The melanoma scanner requires access to the reminders in order to remind you to check for melanoma regularly</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>The melanoma scanner requires access to the photo library in order to save images you take</string>
 	<key>NSCameraUsageDescription</key>
