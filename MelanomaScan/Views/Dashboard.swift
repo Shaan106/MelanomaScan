@@ -30,7 +30,6 @@ struct Dashboard: View {
                 NavigationLink("To Weather Risks", destination: WeatherRisks())
                     .padding()
             }
-            
             .navigationBarTitle("Melanoma Detector")
         }
         
