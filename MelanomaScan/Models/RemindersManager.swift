@@ -7,6 +7,7 @@
 
 import Foundation
 import EventKit
+import UIKit
 
 class RemindersManager {
     
@@ -25,19 +26,20 @@ class RemindersManager {
         }
     }
     
-func requestRemindersAccess() {
-
-    store.requestAccess(to: .reminder, completion:
-      {(granted: Bool, error: Error?) -> Void in
-          if granted {
-            //self.insertEvent(store: store)
-            print("Access granted")
-          } else {
-            print("Access denied")
-          }
-    })
-}
+    func requestRemindersAccess() {
+        
+        store.requestAccess(to: .reminder, completion:
+                                {(granted: Bool, error: Error?) -> Void in
+            if granted {
+                //self.insertEvent(store: store)
+                print("Access granted")
+            } else {
+                print("Access denied")
+            }
+        })
+    }
     
+    // function to create a new reminder (pass in title, description and how long after today the reminder should be set for
     func createAndSaveNewReminder(calendarTitle: String, calendarNotes: String, timeInterval: Double) {
         guard let calendar = self.store.defaultCalendarForNewReminders() else {
             print("Default calendar not created")
@@ -53,10 +55,10 @@ func requestRemindersAccess() {
         
         newReminder.priority = Int(EKReminderPriority.high.rawValue)
         newReminder.notes = calendarNotes
-
+        
         let dueDate = Date().addingTimeInterval(timeInterval)
         newReminder.dueDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: dueDate)
-
+        
         do {
             print("place1")
             try self.store.save(newReminder, commit: true)
@@ -66,6 +68,14 @@ func requestRemindersAccess() {
             print(error)
         }
         
+    }
+    
+    func openRemindersApp() {
+        if let url = URL(string: "x-apple-reminderkit://MelanomaScan"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:]) { (isDone) in
+                
+            }
+        }
     }
     
 }

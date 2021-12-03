@@ -17,10 +17,15 @@ struct Reminders: View {
         VStack {
             Button("Ask for access to calendars") {
                 remindersManager.requestRemindersAccess()
-            }
+            }.padding()
+            
             Button("Create a reminder") {
                 remindersManager.createAndSaveNewReminder(calendarTitle: "TEST REMINDER", calendarNotes: "This is a test reminder", timeInterval: Double(60 * 60 * 24 * 3) )
-            }
+            }.padding()
+            
+            Button("Open Reminiders App") {
+                remindersManager.openRemindersApp()
+            }.padding()
         }
         .navigationBarTitle("Reminders", displayMode: .inline)
     }
