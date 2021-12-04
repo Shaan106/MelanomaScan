@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct WeatherRisks: View {
+    
+    let uvIndexManager = UVIndexManager()
+    
     var body: some View {
-        Text("Weather Risks Page")
         
+        VStack {
+            
+            Button("Test Request") {
+                uvIndexManager.testRequest(callback: {(uvResponse: Double, uvMaxResponse: Double, ozoneResponse: Double) -> () in
+                    print("UV Index: " + String(uvResponse))
+                    print("Max UV Index: " + String(uvMaxResponse))
+                    print("Ozone levels: " + String(ozoneResponse))
+                } )
+            }
+            
+        }
         .navigationBarTitle("Weather Risks")
     }
 }

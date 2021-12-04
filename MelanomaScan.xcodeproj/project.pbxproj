@@ -41,6 +41,7 @@
 		CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B5273E67570054FD44 /* InformationPage.swift */; };
 		CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */; };
 		CDC333C0273E6B130054FD44 /* RiskFactorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */; };
+		CDEB5673275B906D007868FB /* UVIndexManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB5672275B906D007868FB /* UVIndexManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		CDC333B5273E67570054FD44 /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
 		CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorsModel.swift; sourceTree = "<group>"; };
 		CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorDetail.swift; sourceTree = "<group>"; };
+		CDEB5672275B906D007868FB /* UVIndexManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				CD7BA72B2755884100D8BBD8 /* UIHelperFunctions.swift */,
 				CD7BA72D2756876F00D8BBD8 /* LocalNotificationManager.swift */,
 				CD8BDD542758D401002EF5A6 /* RemindersManager.swift */,
+				CDEB5672275B906D007868FB /* UVIndexManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */,
 				CD7BA72C2755884100D8BBD8 /* UIHelperFunctions.swift in Sources */,
 				7B1C2B5426F6012C00593D7A /* MelanomaScanApp.swift in Sources */,
+				CDEB5673275B906D007868FB /* UVIndexManager.swift in Sources */,
 				7B9D4C432705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
 				CD11A8B3271835CC00FF1C78 /* Reminders.swift in Sources */,
 				7B9DDAB22708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
