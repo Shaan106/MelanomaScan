@@ -7,29 +7,28 @@
 
 import Foundation
 
- 
- struct Root_Layer0: Codable {
-     var result: Result_Layer1
- }
- 
- struct Result_Layer1: Codable {
-     var uv: Double
-     var uv_max: Double
-     var ozone: Double
- }
 
-//May also add sunrise and sunset times soon
+struct Root_Layer0: Codable {
+    var result: Result_Layer1
+}
+
+struct Result_Layer1: Codable {
+    var uv: Double
+    var uv_max: Double
+    var ozone: Double
+}
+// May also add sunrise and sunset times soon
 
 class UVIndexManager {
     
-    //using the openUV api
+    //using the openUV api, provinding an access token
     let headers = [
         "x-access-token": "5dc7e2dde16e30b5ad087bc0fe9577cd"
     ]
     
     //function to do a test request from the openUV api
     func testRequest(callback: @escaping (Double, Double, Double) -> ()) {
-        
+        //defining what the request is
         let request = NSMutableURLRequest(url: NSURL(string: "https://api.openuv.io/api/v1/uv?lat=-33.34&lng=115.342&dt=2018-01-24T10%3A50%3A52.283Z")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
         
         request.httpMethod = "GET"
@@ -48,7 +47,7 @@ class UVIndexManager {
             }
             
             var result: Root_Layer0?
-            
+            //decoding the JSON returned
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
@@ -59,10 +58,10 @@ class UVIndexManager {
                 print(error)
                 print("-----ERROR-----")
             }
-            
             guard let json = result else{
                 return
             }
+            //returning the decoded values stored in structs.
             DispatchQueue.main.async {
                 callback(json.result.uv, json.result.uv_max, json.result.ozone)
             }
