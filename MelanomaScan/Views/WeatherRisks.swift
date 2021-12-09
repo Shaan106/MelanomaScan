@@ -25,33 +25,46 @@ struct WeatherRisks: View {
     //using apple's Mapkit to create an initial region, completely random
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 1, longitude: 1), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
+    @State var uvIndexDisplay = "not fetched yet."
+    @State var uvMaxIndexDisplay = "not fetched yet."
+    @State var ozoneLevelDisplay = "not fetched yet."
+    
     var body: some View {
         
         VStack {
             
             Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
-                        .frame(width: 400, height: 300)
+                .frame(width: 350, height: 300)
             
             Spacer()
             
             VStack {
                 
-                Text("location status: \(locationManager.statusString)")
-                Text("latitude: \(userLatitude)")
-                Text("longitude: \(userLongitude)")
+                VStack {
+                    Text("location status: \(locationManager.statusString)")
+                    Text("latitude: \(userLatitude)")
+                    Text("longitude: \(userLongitude)")
+                }.padding()
                 
-                Button("Test Request") {
-                    uvIndexManager.testRequest(callback: {(uvResponse: Double, uvMaxResponse: Double, ozoneResponse: Double) -> () in
-                        print("UV Index: " + String(uvResponse))
-                        print("Max UV Index: " + String(uvMaxResponse))
-                        print("Ozone levels: " + String(ozoneResponse))
-                    } )
-                }
+                VStack {
+                    Text("UV Index: " + uvIndexDisplay)
+                    Text("Max UV Index: " + uvMaxIndexDisplay)
+                    Text("Ozone Level: " + ozoneLevelDisplay)
+                }.padding()
+                
+                
             }
             Spacer()
             
         }
         .navigationBarTitle("Weather Risks")
+        .onAppear(perform: {
+            uvIndexManager.requestUVInfoForLocation(inputLatitude: Double(userLatitude) ?? 0, inputLongitude: Double(userLongitude) ?? 0,callback: {(uvResponse: Double, uvMaxResponse: Double, ozoneResponse: Double) -> () in
+                uvIndexDisplay = String(uvResponse)
+                uvMaxIndexDisplay = String(uvMaxResponse)
+                ozoneLevelDisplay = String(ozoneResponse)
+            })
+        })
     }
 }
 

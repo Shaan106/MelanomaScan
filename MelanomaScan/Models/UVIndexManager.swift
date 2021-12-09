@@ -65,6 +65,50 @@ class UVIndexManager {
             DispatchQueue.main.async {
                 callback(json.result.uv, json.result.uv_max, json.result.ozone)
             }
+        })
+        dataTask.resume()
+    }
+    
+    //requests UV info for given location and current time. Works Async.
+    func requestUVInfoForLocation(inputLatitude: Double, inputLongitude: Double, callback: @escaping (Double, Double, Double) -> ()) {
+        
+        //URL for request
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.openuv.io/api/v1/uv?lat=" + String(inputLatitude) + "&lng=" + String(inputLongitude))! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            //checking if response actually contains data
+            guard let data = data, error == nil else {
+                if let printError = error {
+                    print(printError)
+                } else {
+                    print("error in printError")
+                }
+                return
+            }
+            
+            var result: Root_Layer0?
+            //decoding the JSON returned
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                result = try decoder.decode(Root_Layer0.self, from: data)
+            }
+            catch {
+                print("-----ERROR-----")
+                print(error)
+                print("-----ERROR-----")
+            }
+            guard let json = result else{
+                return
+            }
+            //returning the decoded values stored in structs, works async.
+            DispatchQueue.main.async {
+                callback(json.result.uv, json.result.uv_max, json.result.ozone)
+            }
             
         })
         
