@@ -8,11 +8,11 @@
 import Foundation
 
 
-struct Root_Layer0: Codable {
-    var result: Result_Layer1
+struct UV_Root_Layer0: Codable {
+    var result: UV_Result_Layer1
 }
 
-struct Result_Layer1: Codable {
+struct UV_Result_Layer1: Codable {
     var uv: Double
     var uv_max: Double
     var ozone: Double
@@ -46,12 +46,12 @@ class UVIndexManager {
                 return
             }
             
-            var result: Root_Layer0?
+            var result: UV_Root_Layer0?
             //decoding the JSON returned
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
-                result = try decoder.decode(Root_Layer0.self, from: data)
+                result = try decoder.decode(UV_Root_Layer0.self, from: data)
             }
             catch {
                 print("-----ERROR-----")
@@ -90,12 +90,12 @@ class UVIndexManager {
                 return
             }
             
-            var result: Root_Layer0?
+            var result: UV_Root_Layer0?
             //decoding the JSON returned
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
-                result = try decoder.decode(Root_Layer0.self, from: data)
+                result = try decoder.decode(UV_Root_Layer0.self, from: data)
             }
             catch {
                 print("-----ERROR-----")
