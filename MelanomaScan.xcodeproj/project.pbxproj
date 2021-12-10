@@ -38,6 +38,7 @@
 		CD8242662719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8BDD552758D401002EF5A6 /* RemindersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BDD542758D401002EF5A6 /* RemindersManager.swift */; };
 		CD8BDD572758D4E6002EF5A6 /* TEMP_NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */; };
+		CDA1A1272763CA5D00EF1AC7 /* WeatherRisksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A1262763CA5D00EF1AC7 /* WeatherRisksViewModel.swift */; };
 		CDA6DF2227621864007B3D8F /* AQIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6DF2127621864007B3D8F /* AQIManager.swift */; };
 		CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B5273E67570054FD44 /* InformationPage.swift */; };
 		CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */; };
@@ -92,6 +93,7 @@
 		CD8242632719C449008E44DB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CD8BDD542758D401002EF5A6 /* RemindersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersManager.swift; sourceTree = "<group>"; };
 		CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMP_NotificationView.swift; sourceTree = "<group>"; };
+		CDA1A1262763CA5D00EF1AC7 /* WeatherRisksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRisksViewModel.swift; sourceTree = "<group>"; };
 		CDA6DF2127621864007B3D8F /* AQIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIManager.swift; sourceTree = "<group>"; };
 		CDC333B5273E67570054FD44 /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
 		CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorsModel.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				CDCCEBA92736A78E00108058 /* CoreData Storage */,
 				7B9D4C412705FD38002A6A0F /* MelanomaMLModel */,
 				CD52E744270EF46000CA2B2B /* Models */,
+				CDA1A1252763CA1F00EF1AC7 /* ViewModels */,
 				7B9DDAB02708760900AB4DA6 /* Extensions */,
 				7B9D4C4C2705FF97002A6A0F /* Views */,
 				7B1C2B5726F6012F00593D7A /* Assets.xcassets */,
@@ -234,6 +237,14 @@
 				CDA6DF2127621864007B3D8F /* AQIManager.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CDA1A1252763CA1F00EF1AC7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CDA1A1262763CA5D00EF1AC7 /* WeatherRisksViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		CDCCEBA92736A78E00108058 /* CoreData Storage */ = {
@@ -388,6 +399,7 @@
 				CDEB5673275B906D007868FB /* UVIndexManager.swift in Sources */,
 				7B9D4C432705FE3E002A6A0F /* melanomaModel1(91).mlmodel in Sources */,
 				CD11A8B3271835CC00FF1C78 /* Reminders.swift in Sources */,
+				CDA1A1272763CA5D00EF1AC7 /* WeatherRisksViewModel.swift in Sources */,
 				CDEB5677275C26A2007868FB /* LocationManager.swift in Sources */,
 				7B9DDAB22708762600AB4DA6 /* UIImageExtensions.swift in Sources */,
 				CD52E750271832DD00CA2B2B /* Dashboard.swift in Sources */,

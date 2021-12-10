@@ -29,7 +29,9 @@ struct WeatherRisks: View {
     @State var uvIndexDisplay = "not fetched yet."
     @State var uvMaxIndexDisplay = "not fetched yet."
     @State var ozoneLevelDisplay = "not fetched yet."
-    @State var AQIDataCheck = "AQI not fetched yet."
+    
+    @State var AQICity = "Current city not fetched yet."
+    @State var AQIData = "AQI not fetched yet."
     
     var body: some View {
         
@@ -38,21 +40,18 @@ struct WeatherRisks: View {
             Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
                 .frame(width: 350, height: 300)
             
-            Spacer()
             
             VStack {
-                
-                Text(AQIDataCheck)
-                Button("Test Air pol") {
-                    aqiManager.testRequest(callback: {(cityResponse: String, aqiResponse: Int) -> () in
-                        AQIDataCheck = "Current AQI: " + String(aqiResponse) + ", Current city: " + String(cityResponse)
-                    })
-                }
                 
                 VStack {
                     Text("location status: \(locationManager.statusString)")
                     Text("latitude: \(userLatitude)")
                     Text("longitude: \(userLongitude)")
+                }.padding()
+                
+                VStack {
+                    Text("City: \(AQICity)")
+                    Text("Current AQI: \(AQIData)")
                 }.padding()
                 
                 VStack {
@@ -68,11 +67,17 @@ struct WeatherRisks: View {
         }
         .navigationBarTitle("Weather Risks")
         .onAppear(perform: {
-            uvIndexManager.requestUVInfoForLocation(inputLatitude: Double(userLatitude) ?? 0, inputLongitude: Double(userLongitude) ?? 0,callback: {(uvResponse: Double, uvMaxResponse: Double, ozoneResponse: Double) -> () in
+            uvIndexManager.requestUVInfoForLocation(inputLatitude: Double(userLatitude) ?? 0, inputLongitude: Double(userLongitude) ?? 0 ,callback: {(uvResponse: Double, uvMaxResponse: Double, ozoneResponse: Double) -> () in
                 uvIndexDisplay = String(uvResponse)
                 uvMaxIndexDisplay = String(uvMaxResponse)
                 ozoneLevelDisplay = String(ozoneResponse)
             })
+            
+            aqiManager.requestAQIInfoForLocation(inputLatitude: Double(userLatitude) ?? 0, inputLongitude: Double(userLongitude) ?? 0, callback: {(cityResponse: String, aqiResponse: Int) -> () in
+                AQICity = String(cityResponse)
+                AQIData = String(aqiResponse)
+            })
+            
         })
     }
 }
