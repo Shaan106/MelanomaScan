@@ -11,6 +11,7 @@ import MapKit
 struct WeatherRisks: View {
     
     let uvIndexManager = UVIndexManager()
+    let aqiManager = AQIManager()
     
     @StateObject var locationManager = LocationManager()
     
@@ -28,6 +29,7 @@ struct WeatherRisks: View {
     @State var uvIndexDisplay = "not fetched yet."
     @State var uvMaxIndexDisplay = "not fetched yet."
     @State var ozoneLevelDisplay = "not fetched yet."
+    @State var AQIDataCheck = "AQI not fetched yet."
     
     var body: some View {
         
@@ -39,6 +41,13 @@ struct WeatherRisks: View {
             Spacer()
             
             VStack {
+                
+                Text(AQIDataCheck)
+                Button("Test Air pol") {
+                    aqiManager.testRequest(callback: {(cityResponse: String, aqiResponse: Int) -> () in
+                        AQIDataCheck = "Current AQI: " + String(aqiResponse) + ", Current city: " + String(cityResponse)
+                    })
+                }
                 
                 VStack {
                     Text("location status: \(locationManager.statusString)")
