@@ -39,6 +39,8 @@
 		CD8BDD552758D401002EF5A6 /* RemindersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BDD542758D401002EF5A6 /* RemindersManager.swift */; };
 		CD8BDD572758D4E6002EF5A6 /* TEMP_NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */; };
 		CDA1A1272763CA5D00EF1AC7 /* WeatherRisksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A1262763CA5D00EF1AC7 /* WeatherRisksViewModel.swift */; };
+		CDA1A1292763CCA900EF1AC7 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A1282763CCA900EF1AC7 /* UIScreenExtension.swift */; };
+		CDA1A12D2763FAB200EF1AC7 /* DateFormattingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A12C2763FAB200EF1AC7 /* DateFormattingModel.swift */; };
 		CDA6DF2227621864007B3D8F /* AQIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6DF2127621864007B3D8F /* AQIManager.swift */; };
 		CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B5273E67570054FD44 /* InformationPage.swift */; };
 		CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */; };
@@ -94,6 +96,8 @@
 		CD8BDD542758D401002EF5A6 /* RemindersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersManager.swift; sourceTree = "<group>"; };
 		CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMP_NotificationView.swift; sourceTree = "<group>"; };
 		CDA1A1262763CA5D00EF1AC7 /* WeatherRisksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRisksViewModel.swift; sourceTree = "<group>"; };
+		CDA1A1282763CCA900EF1AC7 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
+		CDA1A12C2763FAB200EF1AC7 /* DateFormattingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormattingModel.swift; sourceTree = "<group>"; };
 		CDA6DF2127621864007B3D8F /* AQIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIManager.swift; sourceTree = "<group>"; };
 		CDC333B5273E67570054FD44 /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
 		CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorsModel.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9DDAB12708762600AB4DA6 /* UIImageExtensions.swift */,
+				CDA1A1282763CCA900EF1AC7 /* UIScreenExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				CDEB5672275B906D007868FB /* UVIndexManager.swift */,
 				CDEB5676275C26A2007868FB /* LocationManager.swift */,
 				CDA6DF2127621864007B3D8F /* AQIManager.swift */,
+				CDA1A12C2763FAB200EF1AC7 /* DateFormattingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,7 +399,9 @@
 				CD11A8BB2718361900FF1C78 /* WeatherRisks.swift in Sources */,
 				CD6F4367273D25A700937C7B /* CoreDataStore.xcdatamodeld in Sources */,
 				CD7BA72E2756876F00D8BBD8 /* LocalNotificationManager.swift in Sources */,
+				CDA1A12D2763FAB200EF1AC7 /* DateFormattingModel.swift in Sources */,
 				CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */,
+				CDA1A1292763CCA900EF1AC7 /* UIScreenExtension.swift in Sources */,
 				CD7BA72C2755884100D8BBD8 /* UIHelperFunctions.swift in Sources */,
 				7B1C2B5426F6012C00593D7A /* MelanomaScanApp.swift in Sources */,
 				CDEB5673275B906D007868FB /* UVIndexManager.swift in Sources */,
