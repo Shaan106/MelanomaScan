@@ -39,111 +39,119 @@ struct WeatherRisks: View {
     
     var body: some View {
         
-        VStack {
-            
-            Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
-                .frame(width: 350, height: 300)
+        ZStack {
+            Rectangle()
+                .fill(Color("Background"))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
             
             
             VStack {
-  
                 
-                VStack(alignment: .leading) {
-                    
-                    HStack {
-                        Text("City:")
-                            .font(.title3)
-                            .bold()
-                        Text("\(AQICity)")
-                            .font(.title3)
-                            .opacity(0.8)
-                    }
-                    
-                    HStack {
-                        Text("Current AQI:")
-                            .font(.title3)
-                            .bold()
-                        Text("\(AQIData)")
-                            .font(.title3)
-                            .opacity(0.8)
-                    }
-                    
-                }.padding()
+                Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
+                    .frame(width: 350, height: 300)
                 
-                weatherRisksViewModel.getAQIColourCodedRectangles(aqi: Double(AQIData) ?? -1)
-                
-                //uncommment to test for different AQI values
-                //weatherRisksViewModel.getAQIColourCodedRectangles(aqi: 260)
-                
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Current UV Index:")
-                            .font(.title3)
-                            .bold()
-                        Text("\(uvIndexDisplay)")
-                            .font(.title3)
-                            .opacity(0.8)
-                    }
-                    
-                    HStack {
-                        Text("Daily Max UV Index:")
-                            .font(.title3)
-                            .bold()
-                        Text("\(uvMaxIndexDisplay)")
-                            .font(.title3)
-                            .opacity(0.8)
-                    }
-                }.padding()
-                
-                weatherRisksViewModel.getUVColourCodedRectangles(uv: Double(uvIndexDisplay) ?? -1)
                 
                 VStack {
-                    HStack {
-                        Text("Daily Max UV Index:")
-                            .font(.title3)
-                            .bold()
-                        Text("\(uvMaxIndexDisplay)")
-                            .font(.title3)
-                            .opacity(0.8)
-                        weatherRisksViewModel.getMaxUVColourCodedRectangles(maxUV: Double(uvMaxIndexDisplay) ?? -1)
-                    }
                     
-                    HStack {
-                        Text("Solar Noon (24hr format):")
-                            .font(.title3)
-                            .bold()
-                        //Text(solarNoonDisplay, style: .time)
-                        Text(dateFormattingModel.convertFromISO6801ToDate(inputISODate: solarNoonDisplay), style: .time)
-                            .font(.title3)
-                            .opacity(0.8)
-                    }
-
-                }.padding()
-                
-                
-                //uncomment to test for different UV values
-                //weatherRisksViewModel.getUVColourCodedRectangles(uv: 3)
+                    
+                    VStack(alignment: .leading) {
+                        
+                        HStack {
+                            Text("City:")
+                                .font(.title3)
+                                .bold()
+                            Text("\(AQICity)")
+                                .font(.title3)
+                                .opacity(0.8)
+                        }
+                        
+                        HStack {
+                            Text("Current AQI:")
+                                .font(.title3)
+                                .bold()
+                            Text("\(AQIData)")
+                                .font(.title3)
+                                .opacity(0.8)
+                        }
+                        
+                    }.padding()
+                    
+                    weatherRisksViewModel.getAQIColourCodedRectangles(aqi: Double(AQIData) ?? -1)
+                    
+                    //uncommment to test for different AQI values
+                    //weatherRisksViewModel.getAQIColourCodedRectangles(aqi: 260)
+                    
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Current UV Index:")
+                                .font(.title3)
+                                .bold()
+                            Text("\(uvIndexDisplay)")
+                                .font(.title3)
+                                .opacity(0.8)
+                        }
+                        
+                        HStack {
+                            Text("Daily Max UV Index:")
+                                .font(.title3)
+                                .bold()
+                            Text("\(uvMaxIndexDisplay)")
+                                .font(.title3)
+                                .opacity(0.8)
+                        }
+                    }.padding()
+                    
+                    weatherRisksViewModel.getUVColourCodedRectangles(uv: Double(uvIndexDisplay) ?? -1)
+                    
+                    VStack {
+                        HStack {
+                            Text("Daily Max UV Index:")
+                                .font(.title3)
+                                .bold()
+                            Text("\(uvMaxIndexDisplay)")
+                                .font(.title3)
+                                .opacity(0.8)
+                            weatherRisksViewModel.getMaxUVColourCodedRectangles(maxUV: Double(uvMaxIndexDisplay) ?? -1)
+                        }
+                        
+                        HStack {
+                            Text("Solar Noon (24hr format):")
+                                .font(.title3)
+                                .bold()
+                            //Text(solarNoonDisplay, style: .time)
+                            Text(dateFormattingModel.convertFromISO6801ToDate(inputISODate: solarNoonDisplay), style: .time)
+                                .font(.title3)
+                                .opacity(0.8)
+                        }
+                        
+                    }.padding()
+                    
+                    
+                    //uncomment to test for different UV values
+                    //weatherRisksViewModel.getUVColourCodedRectangles(uv: 3)
+                    
+                }
+                Spacer()
                 
             }
-            Spacer()
-            
+            .navigationBarTitle("Weather Risks")
+            .onAppear(perform: {
+                uvIndexManager.requestUVInfoForLocation(inputLatitude: Double(userLatitude) ?? 0, inputLongitude: Double(userLongitude) ?? 0 ,callback: {(uvResponse: Double, uvMaxResponse: Double, ozoneResponse: Double, solarNoonResponse: String) -> () in
+                    uvIndexDisplay = String(uvResponse)
+                    uvMaxIndexDisplay = String(uvMaxResponse)
+                    ozoneLevelDisplay = String(ozoneResponse)
+                    solarNoonDisplay = String(solarNoonResponse)
+                    print(solarNoonDisplay)
+                })
+                
+                aqiManager.requestAQIInfoForLocation(inputLatitude: Double(userLatitude) ?? 0, inputLongitude: Double(userLongitude) ?? 0, callback: {(cityResponse: String, aqiResponse: Int) -> () in
+                    AQICity = String(cityResponse)
+                    AQIData = String(aqiResponse)
+                })
+                
+            })
         }
-        .navigationBarTitle("Weather Risks")
-        .onAppear(perform: {
-            uvIndexManager.requestUVInfoForLocation(inputLatitude: Double(userLatitude) ?? 0, inputLongitude: Double(userLongitude) ?? 0 ,callback: {(uvResponse: Double, uvMaxResponse: Double, ozoneResponse: Double, solarNoonResponse: String) -> () in
-                uvIndexDisplay = String(uvResponse)
-                uvMaxIndexDisplay = String(uvMaxResponse)
-                ozoneLevelDisplay = String(ozoneResponse)
-                solarNoonDisplay = String(solarNoonResponse)
-                print(solarNoonDisplay)
-            })
-            
-            aqiManager.requestAQIInfoForLocation(inputLatitude: Double(userLatitude) ?? 0, inputLongitude: Double(userLongitude) ?? 0, callback: {(cityResponse: String, aqiResponse: Int) -> () in
-                AQICity = String(cityResponse)
-                AQIData = String(aqiResponse)
-            })
-            
-        })
     }
 }
 

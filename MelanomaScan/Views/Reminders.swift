@@ -24,28 +24,35 @@ struct Reminders: View {
     
     var body: some View {
         
-        VStack {
+        ZStack {
+            Rectangle()
+                .fill(Color("Background"))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
             
-            //pickers so that the user can decide how often and for how long reminders appear.
-            
-            Picker(selection: $selectedTimeIntervalKey, label: Text("Reminder Interval")) {
-                ForEach(reminderTimeIntervalDictionary.sorted(by: <), id: \.key) { key, val in
-                    Text(key)
+            VStack {
+                
+                //pickers so that the user can decide how often and for how long reminders appear.
+                
+                Picker(selection: $selectedTimeIntervalKey, label: Text("Reminder Interval")) {
+                    ForEach(reminderTimeIntervalDictionary.sorted(by: <), id: \.key) { key, val in
+                        Text(key)
+                    }
                 }
+                
+                Button("Create a reminder") {
+                    //method goes here to use what user inputted.
+                    remindersManager.userCreateAndSaveNewReminder(calendarTitle: "MelanomaScan Reminder", calendarNotes: "Reminder to check any moles on your skin that you are unsure about.", timeInterval: reminderTimeIntervalDictionary[selectedTimeIntervalKey] ?? -1)
+                }.padding()
+                
+                
+                Button("Open Reminiders App") {
+                    remindersManager.openRemindersApp()
+                }.padding()
+                
             }
-            
-            Button("Create a reminder") {
-                //method goes here to use what user inputted.
-                remindersManager.userCreateAndSaveNewReminder(calendarTitle: "MelanomaScan Reminder", calendarNotes: "Reminder to check any moles on your skin that you are unsure about.", timeInterval: reminderTimeIntervalDictionary[selectedTimeIntervalKey] ?? -1)
-            }.padding()
-            
-            
-            Button("Open Reminiders App") {
-                remindersManager.openRemindersApp()
-            }.padding()
-            
+            .navigationBarTitle("Reminders")
         }
-        .navigationBarTitle("Reminders", displayMode: .inline)
     }
 }
 

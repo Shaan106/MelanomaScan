@@ -23,39 +23,48 @@ struct InformationPage: View {
     }
     
     var body: some View {
-        VStack {
-            
-            //displays names in a way that they can be deleted
-            List {
-                ForEach(riskFactorsList, id: \.self) { riskFactor in
-                    NavigationLink(destination: RiskFactorDetail(riskFactor: riskFactor, coreDM: coreDataManager, needsRefresh: $needsRefresh, whichPickerToShow: riskFactor.name ?? "", tempPickerList: riskFactorsModel.returnStringListOfRiskFactors(name: (riskFactor.name ?? "") )), label: {
-                        HStack {
-                            Text(riskFactor.name ?? "")
-                            Spacer()
-                            Text(riskFactor.value ?? "")
-                        }
-                    })
-                }
-                
-                //This is just to make sure that everything stays up to date.
-            }
-            .listStyle(PlainListStyle())
-            .accentColor(needsRefresh ? .black: .white)
-            
-            Button("Reset all risk factors") {
-                // coreDataManager.saveRiskFactorValue(stringValue: riskFactorValue)
-                riskFactorsModel.resetRiskFactors(coreDataManager: coreDataManager, listOfRiskFactors: stringListOfRiskFactors)
-                populateRiskFactors()
-                //needsRefresh.toggle()
-            }.padding()
-            
-            Text( riskFactorsModel.calculateFinalRiskFactor(riskFactorsList: riskFactorsList) ).padding()
-            
-        }.navigationBarTitle("Information Page")
-            .onAppear(perform: {
-                populateRiskFactors()
-            })
         
+        ZStack {
+            Rectangle()
+                .fill(Color("Background"))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                
+                //displays names in a way that they can be deleted
+                List {
+                    ForEach(riskFactorsList, id: \.self) { riskFactor in
+                        NavigationLink(destination: RiskFactorDetail(riskFactor: riskFactor, coreDM: coreDataManager, needsRefresh: $needsRefresh, whichPickerToShow: riskFactor.name ?? "", tempPickerList: riskFactorsModel.returnStringListOfRiskFactors(name: (riskFactor.name ?? "") )), label: {
+                            HStack {
+                                Text(riskFactor.name ?? "")
+                                Spacer()
+                                Text(riskFactor.value ?? "")
+                            }
+                        })
+                    }.listRowBackground(Color("Background").ignoresSafeArea())
+                    //This is just to make sure that everything stays up to date.
+                }
+                //.background(Color("Background"))
+                .listStyle(PlainListStyle())
+                .accentColor(needsRefresh ? .black: .white)
+                
+                Button("Reset all risk factors") {
+                    // coreDataManager.saveRiskFactorValue(stringValue: riskFactorValue)
+                    riskFactorsModel.resetRiskFactors(coreDataManager: coreDataManager, listOfRiskFactors: stringListOfRiskFactors)
+                    populateRiskFactors()
+                    //needsRefresh.toggle()
+                }.padding()
+                
+                Text( riskFactorsModel.calculateFinalRiskFactor(riskFactorsList: riskFactorsList) ).padding()
+                
+            }.navigationBarTitle("Information Page")
+                .background(Color("Background"))
+                .onAppear(perform: {
+                    populateRiskFactors()
+                    UITableView.appearance().backgroundColor = .clear
+                })
+        }
     }
     
 }

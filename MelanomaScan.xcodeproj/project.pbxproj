@@ -42,6 +42,7 @@
 		CDA1A1292763CCA900EF1AC7 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A1282763CCA900EF1AC7 /* UIScreenExtension.swift */; };
 		CDA1A12D2763FAB200EF1AC7 /* DateFormattingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A12C2763FAB200EF1AC7 /* DateFormattingModel.swift */; };
 		CDA1A131276414B100EF1AC7 /* ButtonStyleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A130276414B100EF1AC7 /* ButtonStyleViewModel.swift */; };
+		CDA1A1352764B2F200EF1AC7 /* GifViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A1342764B2F200EF1AC7 /* GifViewModel.swift */; };
 		CDA6DF2227621864007B3D8F /* AQIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6DF2127621864007B3D8F /* AQIManager.swift */; };
 		CDC333B6273E67570054FD44 /* InformationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B5273E67570054FD44 /* InformationPage.swift */; };
 		CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */; };
@@ -100,6 +101,7 @@
 		CDA1A1282763CCA900EF1AC7 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		CDA1A12C2763FAB200EF1AC7 /* DateFormattingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormattingModel.swift; sourceTree = "<group>"; };
 		CDA1A130276414B100EF1AC7 /* ButtonStyleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleViewModel.swift; sourceTree = "<group>"; };
+		CDA1A1342764B2F200EF1AC7 /* GifViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewModel.swift; sourceTree = "<group>"; };
 		CDA6DF2127621864007B3D8F /* AQIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIManager.swift; sourceTree = "<group>"; };
 		CDC333B5273E67570054FD44 /* InformationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPage.swift; sourceTree = "<group>"; };
 		CDC333B7273E68440054FD44 /* RiskFactorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFactorsModel.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				CDA1A1262763CA5D00EF1AC7 /* WeatherRisksViewModel.swift */,
 				CDA1A130276414B100EF1AC7 /* ButtonStyleViewModel.swift */,
+				CDA1A1342764B2F200EF1AC7 /* GifViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				CD5B5C152750DC2B00CB1EF3 /* ImageSaver.swift in Sources */,
 				CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */,
 				CD11A8BB2718361900FF1C78 /* WeatherRisks.swift in Sources */,
+				CDA1A1352764B2F200EF1AC7 /* GifViewModel.swift in Sources */,
 				CD6F4367273D25A700937C7B /* CoreDataStore.xcdatamodeld in Sources */,
 				CD7BA72E2756876F00D8BBD8 /* LocalNotificationManager.swift in Sources */,
 				CDA1A12D2763FAB200EF1AC7 /* DateFormattingModel.swift in Sources */,

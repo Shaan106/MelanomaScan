@@ -20,37 +20,44 @@ struct RiskFactorDetail: View {
     @State var selectedValue = ""
     
     var body: some View {
-        VStack {
+        ZStack {
+            Rectangle()
+                .fill(Color("Background"))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
             
-            Text( (riskFactor.value ?? "") + " | Dev Value: " + String(riskFactor.numericalRiskValue))
-            
-//            TextField(riskFactor.value ?? "", text: $riskFactorName)
-//                .textFieldStyle(RoundedBorderTextFieldStyle())
-//                .padding()
-
-            Picker("Please choose a color", selection: $selectedValue) {
-                            ForEach(tempPickerList, id: \.self) {
-                                Text($0)
-                            }
+            VStack {
+                
+                Text( (riskFactor.value ?? "") + " | Dev Value: " + String(riskFactor.numericalRiskValue))
+                
+                //            TextField(riskFactor.value ?? "", text: $riskFactorName)
+                //                .textFieldStyle(RoundedBorderTextFieldStyle())
+                //                .padding()
+                
+                Picker("Please choose a color", selection: $selectedValue) {
+                    ForEach(tempPickerList, id: \.self) {
+                        Text($0)
+                    }
                 }.padding()
-            
-            Text("You selected: \(selectedValue)")
-                .padding()
-            
-            
-            Button("Update") {
-                if !selectedValue.isEmpty {
-                    riskFactor.value = selectedValue
-                    riskFactor.numericalRiskValue = riskFactorsModel.returnNumericalRiskValue(pickerName: whichPickerToShow, pickerChoice: selectedValue)
-                    coreDM.updateRiskFactor()
-                    needsRefresh.toggle()
-                }
-            }.padding()
-            
-            Text("ADD MORE INFO ABOUT RISK FACTOR")
-                .padding()
-            
-        }.navigationBarTitle(riskFactor.name ?? "")
+                
+                Text("You selected: \(selectedValue)")
+                    .padding()
+                
+                
+                Button("Update") {
+                    if !selectedValue.isEmpty {
+                        riskFactor.value = selectedValue
+                        riskFactor.numericalRiskValue = riskFactorsModel.returnNumericalRiskValue(pickerName: whichPickerToShow, pickerChoice: selectedValue)
+                        coreDM.updateRiskFactor()
+                        needsRefresh.toggle()
+                    }
+                }.padding()
+                
+                Text("ADD MORE INFO ABOUT RISK FACTOR")
+                    .padding()
+                
+            }.navigationBarTitle(riskFactor.name ?? "")
+        }
     }
 }
 
