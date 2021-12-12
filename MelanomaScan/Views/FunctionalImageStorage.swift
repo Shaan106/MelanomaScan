@@ -9,11 +9,23 @@ import SwiftUI
 
 struct FunctionalImageStorage: View {
     var body: some View {
-        VStack {
-            Text("Functional Image Storage Page")
-        }
-        .navigationBarTitle("Functional Image Storage")
         
+        ZStack {
+            Rectangle()
+                .fill(Color("Background"))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                
+                GifImage("Dark_Mode_Cropped")
+                    .frame(width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40)
+                    .background(Color.clear)
+                
+                Text("Functional Image Storage Page")
+            }
+            .navigationBarTitle("Functional Image Storage")
+        }
     }
 }
 

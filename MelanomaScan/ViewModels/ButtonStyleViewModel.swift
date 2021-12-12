@@ -12,6 +12,7 @@ import SwiftUI
 struct NeumorphicButtonStyle: ButtonStyle {
     var color: Color
     
+    //creates a button that has slight shadows and looks nice
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             //.padding()

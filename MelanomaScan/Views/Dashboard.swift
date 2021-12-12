@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct Dashboard: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    @State var scanImage = GifImage("Light_Mode_Cropped")
+    
     var body: some View {
         
         // a navigation view allows for links to other pages
@@ -20,29 +24,68 @@ struct Dashboard: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    //links to other pages.
+
                     
-                    NavigationLink("Skin Classifier", destination: SkinClassifier())
-                        .padding()
-                        .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+                    NavigationLink(destination: SkinClassifier()) {
+                        VStack {
+                            if colorScheme == .dark {
+                                GifImage("Dark_Mode_Cropped")
+                            } else {
+                                GifImage("Light_Mode_Cropped")
+                            }
+                        }
+                    }.frame(width: 225, height: 225)
+                        .background(Color.clear)
                     
-                    NavigationLink("[remove]", destination: FunctionalImageStorage())
-                        .padding()
-                        .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+                    if colorScheme == .dark {
+                        Text("Scan")
+                            .font(.title)
+                            .bold()
+                            .foregroundColor(.white)
+                            .opacity(1)
+                    } else {
+                        Text("Scan")
+                            .font(.title)
+                            .bold()
+                            .foregroundColor(.black)
+                            .opacity(1)
+                    }
                     
-                    NavigationLink("Risk Factors", destination: InformationPage(coreDataManager: CoreDataManager()))
-                        .padding()
-                        .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+
+                    VStack {
+
+                        HStack {
+                            Image(systemName: "cloud.sun")
+                                .font(Font.system(.largeTitle))
+                                .foregroundColor(Color("Anti-Background"))
+                                .padding()
+                            NavigationLink("Weather Risks", destination: WeatherRisks())
+                                .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+                        }.padding()
+                        
+                        HStack {
+                            Image(systemName: "person")
+                                .font(Font.system(.largeTitle))
+                                .foregroundColor(Color("Anti-Background"))
+                                .padding()
+                            NavigationLink("Risk Factors", destination: InformationPage(coreDataManager: CoreDataManager()))
+                                .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+                        }.padding()
+                        
+                        HStack {
+                            Image(systemName: "calendar")
+                                .font(Font.system(.largeTitle))
+                                .foregroundColor(Color("Anti-Background"))
+                                .padding()
+                            NavigationLink("Reminders", destination: Reminders())
+                                .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+                        }.padding()
+
+                    }
                     
-                    NavigationLink("Reminders", destination: Reminders())
-                        .padding()
-                        .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
-                    
-                    NavigationLink("Weather Risks", destination: WeatherRisks())
-                        .padding()
-                        .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
                 }
                 .navigationBarTitle("Melanoma Detector")
+                
             }
         }
         
