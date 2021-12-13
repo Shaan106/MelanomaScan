@@ -34,21 +34,29 @@ struct Reminders: View {
                 
                 //pickers so that the user can decide how often and for how long reminders appear.
                 
+                Text("Choose Reminder Frequency -")
+                    .font(.title2)
+                    .bold()
+                
                 Picker(selection: $selectedTimeIntervalKey, label: Text("Reminder Interval")) {
                     ForEach(reminderTimeIntervalDictionary.sorted(by: <), id: \.key) { key, val in
                         Text(key)
                     }
                 }
                 
-                Button("Create a reminder") {
+                
+                
+                Button("Create reminder") {
                     //method goes here to use what user inputted.
                     remindersManager.userCreateAndSaveNewReminder(calendarTitle: "MelanomaScan Reminder", calendarNotes: "Reminder to check any moles on your skin that you are unsure about.", timeInterval: reminderTimeIntervalDictionary[selectedTimeIntervalKey] ?? -1)
-                }.padding()
+                }.buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+                    .padding()
                 
                 
-                Button("Open Reminiders App") {
+                Button("Show reminders") {
                     remindersManager.openRemindersApp()
-                }.padding()
+                }.buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+                    .padding()
                 
             }
             .navigationBarTitle("Reminders")

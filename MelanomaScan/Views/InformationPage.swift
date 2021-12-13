@@ -49,12 +49,13 @@ struct InformationPage: View {
                 .listStyle(PlainListStyle())
                 .accentColor(needsRefresh ? .black: .white)
                 
-                Button("Reset all risk factors") {
+                Button("Reset All") {
                     // coreDataManager.saveRiskFactorValue(stringValue: riskFactorValue)
                     riskFactorsModel.resetRiskFactors(coreDataManager: coreDataManager, listOfRiskFactors: stringListOfRiskFactors)
                     populateRiskFactors()
                     //needsRefresh.toggle()
-                }.padding()
+                }.buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+                    .padding()
                 
                 Text( riskFactorsModel.calculateFinalRiskFactor(riskFactorsList: riskFactorsList) ).padding()
                 

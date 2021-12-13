@@ -51,7 +51,8 @@ struct RiskFactorDetail: View {
                         coreDM.updateRiskFactor()
                         needsRefresh.toggle()
                     }
-                }.padding()
+                }.buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
+                .padding()
                 
                 Text("ADD MORE INFO ABOUT RISK FACTOR")
                     .padding()

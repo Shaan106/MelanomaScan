@@ -10,7 +10,7 @@ import SwiftUI
 struct SkinClassifier: View {
     
     private var initialImageName = "initialImage"
-    @State private var classificationLabel: String = ""
+    @State private var classificationLabel: String = "   n/a   "
     @State private var confidence: Double = 0
     
     //states affecting look of view
@@ -52,11 +52,13 @@ struct SkinClassifier: View {
                         if changeClassificationImage == true {
                             Image(uiImage: imageSelectedFromCameraRoll)
                                 .resizable()
+                                .cornerRadius(20)
                                 .frame(width: 250, height: 250)
                         } else {
-                            Image(initialImageName)
+                            Image(systemName: "camera.viewfinder")
                                 .resizable()
-                            //.frame(width:UIScreen.main.bounds.width*(3/4), height:UIScreen.main.bounds.height*(1/4))
+                                .cornerRadius(20)
+                                .foregroundColor(Color("Anti-Background"))
                                 .frame(width:250,height:250)
                         }
                     }).actionSheet(isPresented: $showChooseCameraOrRollSheet) {
@@ -78,39 +80,43 @@ struct SkinClassifier: View {
                     }
                     
                     //button to call subroutine to classify image
-                    Button("Classify") {
+                    Button("Classify Image") {
                         showingClassificationWarning = true
                         (self.classificationLabel, self.confidence) = imageClassifierInstance.performImageClassification2(image: imageSelectedFromCameraRoll)
                         //converts confidence from 0-1 to 0-100, adding normalisation
                         self.confidence = imageClassifierInstance.certaintyFunction(oldCertainty: self.confidence)
-                    }
+                    }.buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
                     .alert( isPresented: $showingClassificationWarning) {
                         Alert(
-                            title: Text("[MESSAGE ABOUT ML ALGORITHM NOT BEING PERFECT]"),
-                            message: Text("Message"),
+                            title: Text("Important Note"),
+                            message: Text("Please do not take the result of this app for granted. It is an algorithm that is not always correct and it will always be better to see a professional doctor if you have any concern."),
                             dismissButton: .default(Text("I understand"), action: {
                             })
                         )
                     }.padding()
                     
-                    Button("Save to camera roll") {
+                    Button("Save Image") {
                         
                         if changeClassificationImage == true {
                             imageSaver.writeToPhotoAlbum(image: imageSelectedFromCameraRoll)
                         } else {
                             imageSaver.writeToPhotoAlbum(image: UIImage(imageLiteralResourceName: initialImageName))
                         }
-                    }
+                    }.buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
                     
                     //what the image is classified as
                     Text(classificationLabel)
+                        .bold()
+                        .foregroundColor(Color("Background"))
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color("Anti-Background")))
                         .padding()
                         .font(.title)
                     
                     //confidence of classification
-                    Text(String(confidence))
+                    Text("Classifier Confidence: " + String(confidence))
                         .padding()
-                        .font(.title)
+                        .font(.title3)
                     
                 }.sheet(isPresented: $openCameraRoll, content: {
                     ZStack {

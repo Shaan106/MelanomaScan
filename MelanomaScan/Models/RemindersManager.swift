@@ -48,50 +48,50 @@ class RemindersManager {
             
             self.requestRemindersAccess()
             
-        } else {
+        }
+        
+        guard let calendar = self.store.defaultCalendarForNewReminders() else {
+            print("Default calendar not created")
+            return
+        }
+        
+        //print("working here")
+        //print(calendar)
+        
+        let newReminder = EKReminder(eventStore: store)
+        newReminder.calendar = calendar
+        newReminder.title = calendarTitle
+        
+        newReminder.priority = Int(EKReminderPriority.high.rawValue)
+        newReminder.notes = calendarNotes
+        
+        let dueDate = Date().addingTimeInterval(timeInterval)
+        newReminder.dueDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: dueDate)
+        
+        if numWeeksPerRepeat == -1 {
             
-            guard let calendar = self.store.defaultCalendarForNewReminders() else {
-                print("Default calendar not created")
-                return
+            do {
+                try self.store.save(newReminder, commit: true)
+                print("** Reminder Saved **")
+            } catch let error {
+                print(error)
             }
             
-            //print("working here")
-            //print(calendar)
+        } else {
             
-            let newReminder = EKReminder(eventStore: store)
-            newReminder.calendar = calendar
-            newReminder.title = calendarTitle
+            let recurrenceRule = EKRecurrenceRule(recurrenceWith: .weekly, interval: numWeeksPerRepeat, daysOfTheWeek: [EKRecurrenceDayOfWeek(.monday)], daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil)
+            newReminder.addRecurrenceRule(recurrenceRule)
             
-            newReminder.priority = Int(EKReminderPriority.high.rawValue)
-            newReminder.notes = calendarNotes
-            
-            let dueDate = Date().addingTimeInterval(timeInterval)
-            newReminder.dueDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: dueDate)
-            
-            if numWeeksPerRepeat == -1 {
-                
-                do {
-                    try self.store.save(newReminder, commit: true)
-                    print("** Reminder Saved **")
-                } catch let error {
-                    print(error)
-                }
-                
-            } else {
-                
-                let recurrenceRule = EKRecurrenceRule(recurrenceWith: .weekly, interval: numWeeksPerRepeat, daysOfTheWeek: [EKRecurrenceDayOfWeek(.monday)], daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil)
-                newReminder.addRecurrenceRule(recurrenceRule)
-                
-                do {
-                    try self.store.save(newReminder, commit: true)
-                    print("** Reminder Saved **")
-                } catch let error {
-                    print(error)
-                }
-                
+            do {
+                try self.store.save(newReminder, commit: true)
+                print("** Reminder Saved **")
+            } catch let error {
+                print(error)
             }
             
         }
+        
+        
     }
     
     func openRemindersApp() {

@@ -37,7 +37,6 @@
 		CD8242652719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8242662719C449008E44DB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8242632719C449008E44DB /* ImagePicker.swift */; };
 		CD8BDD552758D401002EF5A6 /* RemindersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BDD542758D401002EF5A6 /* RemindersManager.swift */; };
-		CD8BDD572758D4E6002EF5A6 /* TEMP_NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */; };
 		CDA1A1272763CA5D00EF1AC7 /* WeatherRisksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A1262763CA5D00EF1AC7 /* WeatherRisksViewModel.swift */; };
 		CDA1A1292763CCA900EF1AC7 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A1282763CCA900EF1AC7 /* UIScreenExtension.swift */; };
 		CDA1A12D2763FAB200EF1AC7 /* DateFormattingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A12C2763FAB200EF1AC7 /* DateFormattingModel.swift */; };
@@ -98,7 +97,6 @@
 		CD7BA72D2756876F00D8BBD8 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		CD8242632719C449008E44DB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CD8BDD542758D401002EF5A6 /* RemindersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersManager.swift; sourceTree = "<group>"; };
-		CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMP_NotificationView.swift; sourceTree = "<group>"; };
 		CDA1A1262763CA5D00EF1AC7 /* WeatherRisksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRisksViewModel.swift; sourceTree = "<group>"; };
 		CDA1A1282763CCA900EF1AC7 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		CDA1A12C2763FAB200EF1AC7 /* DateFormattingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormattingModel.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 				CDC333B5273E67570054FD44 /* InformationPage.swift */,
 				CDC333BF273E6B130054FD44 /* RiskFactorDetail.swift */,
 				CD11A8B2271835CC00FF1C78 /* Reminders.swift */,
-				CD8BDD562758D4E6002EF5A6 /* TEMP_NotificationView.swift */,
 				CD11A8BA2718361900FF1C78 /* WeatherRisks.swift */,
 				7B1C2B5326F6012C00593D7A /* MelanomaScanApp.swift */,
 			);
@@ -407,7 +404,6 @@
 			files = (
 				CDC333C0273E6B130054FD44 /* RiskFactorDetail.swift in Sources */,
 				CDA1A131276414B100EF1AC7 /* ButtonStyleViewModel.swift in Sources */,
-				CD8BDD572758D4E6002EF5A6 /* TEMP_NotificationView.swift in Sources */,
 				7B1C2B5626F6012C00593D7A /* SkinClassifier.swift in Sources */,
 				CD5B5C152750DC2B00CB1EF3 /* ImageSaver.swift in Sources */,
 				CDC333B8273E68440054FD44 /* RiskFactorsModel.swift in Sources */,
