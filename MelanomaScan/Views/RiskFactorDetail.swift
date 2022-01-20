@@ -28,7 +28,8 @@ struct RiskFactorDetail: View {
             
             VStack {
                 
-                Text( (riskFactor.value ?? "") + " | Dev Value: " + String(riskFactor.numericalRiskValue))
+                //Text( (riskFactor.value ?? "") + " | Dev Value: " + String(riskFactor.numericalRiskValue))
+                Text( riskFactor.value ?? "")
                 
                 //            TextField(riskFactor.value ?? "", text: $riskFactorName)
                 //                .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -54,10 +55,11 @@ struct RiskFactorDetail: View {
                 }.buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
                 .padding()
                 
-                Text("ADD MORE INFO ABOUT RISK FACTOR")
+                //link to risk factors in cancer research uk website.
+                Link("More Info", destination: URL(string: riskFactorsModel.returnMoreInfoURL(name: riskFactor.name ?? "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors"))!).buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
                     .padding()
-                
             }.navigationBarTitle(riskFactor.name ?? "")
+            
         }
     }
 }

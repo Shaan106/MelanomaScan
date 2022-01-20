@@ -181,6 +181,54 @@ class RiskFactorsModel {
         
     }
     
+    func returnMoreInfoURL(name: String) -> String {
+        if name == "Age"{
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseZero"
+            
+        } else if name == "Gender" {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseZero"
+            
+        } else if name == "Skin Type" {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseFour"
+            
+        } else if name == "Eye Colour" {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseFive"
+            
+        } else if name == "Hair Colour" {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseFive"
+            
+        } else if name == "Number of Moles" {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseSix"
+            
+        } else if name == "Freckles" {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseSix"
+            
+        } else if name == "Family History" {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseSeven"
+            
+        } else if name == "Diseases and Conditions" {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseEight"
+            
+        } else if name == "Body Mass Index" {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors#collapseTen"
+            
+        } else {
+            
+            return "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/risk-factors"
+            
+        }
+    }
+    
     //calculates the sum of risk factors
     func calculateFinalRiskFactor(riskFactorsList: [RiskFactors]) -> String {
         let numItems = riskFactorsList.count - 2 //because age and gender are not taken into consideration for melanoma risk

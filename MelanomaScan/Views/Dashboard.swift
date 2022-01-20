@@ -9,6 +9,9 @@ import SwiftUI
 
 struct Dashboard: View {
     
+    var colors: [Color] = [Color("Background"), Color("Anti-Background")]
+    @State var index: Int = 0
+    
     @Environment(\.colorScheme) var colorScheme
     @State var scanImage = GifImage("Light_Mode_Cropped")
     
@@ -61,7 +64,7 @@ struct Dashboard: View {
                             NavigationLink("Weather Risks", destination: WeatherRisks())
                                 .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
                         }.padding()
-                        
+
                         HStack {
                             Image(systemName: "person")
                                 .font(Font.system(.largeTitle))
@@ -69,7 +72,7 @@ struct Dashboard: View {
                             NavigationLink("Risk Factors", destination: InformationPage(coreDataManager: CoreDataManager()))
                                 .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
                         }.padding()
-                        
+
                         HStack {
                             Image(systemName: "calendar")
                                 .font(Font.system(.largeTitle))
@@ -77,7 +80,18 @@ struct Dashboard: View {
                             NavigationLink("Reminders", destination: Reminders())
                                 .buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
                         }.padding()
-
+                        
+//                        SplashView(animationType: .circle, color: self.colors[self.index])
+//                            .frame(width: 100, height: 100, alignment: .center)
+//                            .cornerRadius(10)
+//
+//                        Button(action: {
+//                                        self.index = (self.index + 1) % self.colors.count
+//                                    }) {
+//                                        Text("Change Color")
+//                                    }
+//                                    .padding(.top, 20)
+//
                     }
                     
                 }

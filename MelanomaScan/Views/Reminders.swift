@@ -20,7 +20,7 @@ struct Reminders: View {
                                             "4. Every month": 30,
                                             "5. Every two months": 60,
                                             "6. Every three months": 90,
-                                            "7. Every seven months": 180]
+                                            "7. Every six months": 180]
     
     var body: some View {
         
