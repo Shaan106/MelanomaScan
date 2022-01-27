@@ -41,17 +41,16 @@ struct Dashboard: View {
                         .background(Color.clear)
                     
                     if colorScheme == .dark {
-                        Text("Scan")
-                            .font(.title)
-                            .bold()
+                        //Text("Scan")
+                        NavigationLink("Scan" ,destination: SkinClassifier())
+                            .font(.title.bold())
                             .foregroundColor(.white)
-                            .opacity(1)
+                            .buttonStyle(.plain)
                     } else {
-                        Text("Scan")
-                            .font(.title)
-                            .bold()
+                        NavigationLink("Scan" ,destination: SkinClassifier())
+                            .font(.title.bold())
                             .foregroundColor(.black)
-                            .opacity(1)
+                            .buttonStyle(.plain)
                     }
                     
 
