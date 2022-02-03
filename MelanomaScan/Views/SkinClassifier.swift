@@ -16,6 +16,7 @@ struct SkinClassifier: View {
     //states affecting look of view
     @State private var imageChosen: Double = 1
     @State private var showingClassificationWarning = false
+    @State private var linkToFurtherInformationShowing = false
     
     //picture picker
     @State var changeClassificationImage = false
@@ -85,15 +86,22 @@ struct SkinClassifier: View {
                         (self.classificationLabel, self.confidence) = imageClassifierInstance.performImageClassification2(image: imageSelectedFromCameraRoll)
                         //converts confidence from 0-1 to 0-100, adding normalisation
                         self.confidence = imageClassifierInstance.certaintyFunction(oldCertainty: self.confidence)
+                        
+                        if classificationLabel == "Malignant" {
+                            linkToFurtherInformationShowing = true
+                        } else {
+                            linkToFurtherInformationShowing = false
+                        }
+                        
                     }.buttonStyle(NeumorphicButtonStyle(color: Color("Background")))
-                    .alert( isPresented: $showingClassificationWarning) {
-                        Alert(
-                            title: Text("Important Note"),
-                            message: Text("Please do not take the result of this app for granted. It is an algorithm that is not always correct and it will always be better to see a professional doctor if you have any concern."),
-                            dismissButton: .default(Text("I understand"), action: {
-                            })
-                        )
-                    }.padding()
+                        .alert( isPresented: $showingClassificationWarning) {
+                            Alert(
+                                title: Text("Important Note"),
+                                message: Text("Please do not take the result of this app for granted. It is an algorithm that is not always correct and it will always be better to see a professional doctor if you have any concern."),
+                                dismissButton: .default(Text("I understand"), action: {
+                                })
+                            )
+                        }.padding()
                     
                     Button("Save Image") {
                         
@@ -114,7 +122,7 @@ struct SkinClassifier: View {
                         .font(.title)
                     
                     //confidence of classification
-                    Text("Classifier Confidence: " + String(confidence))
+                    Text("Classifier Confidence: " + String( round(confidence*10)/10.0 ) + "%")
                         .padding()
                         .font(.title3)
                     
@@ -137,6 +145,19 @@ struct SkinClassifier: View {
                         
                     }
                 })
+                
+                    .alert( isPresented: $linkToFurtherInformationShowing) {
+                        Alert(
+                            title: Text("Important Note"),
+                            message: Text("Remember the classification provided by this app is just a naive prediction. Please research it more through the following link"),
+                            primaryButton: .default(Text("Link")) {
+                                if let url = URL(string: "https://www.nhs.uk/conditions/melanoma-skin-cancer/") {
+                                       UIApplication.shared.open(url)
+                                    }
+                            },
+                            secondaryButton: .cancel()
+                        )
+                    }
                 
             }
             .navigationBarTitle("Skin Classifier")
